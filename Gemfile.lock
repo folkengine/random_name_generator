@@ -1,0 +1,62 @@
+PATH
+  remote: .
+  specs:
+    fuzzy_octo_train (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.2.0)
+    astrolabe (1.3.1)
+      parser (~> 2.2)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    codeclimate-engine-rb (0.3.1)
+      virtus (~> 1.0)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    equalizer (0.0.11)
+    ice_nine (0.11.2)
+    minitest (5.8.3)
+    parser (2.3.0.6)
+      ast (~> 2.2)
+    powerpack (0.1.1)
+    private_attr (1.1.0)
+    rainbow (2.1.0)
+    rake (10.5.0)
+    reek (3.10.1)
+      codeclimate-engine-rb (~> 0.3.1)
+      parser (~> 2.3)
+      private_attr (~> 1.1)
+      rainbow (~> 2.0)
+    rubocop (0.30.1)
+      astrolabe (~> 1.3)
+      parser (>= 2.2.2.1, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.4)
+    ruby-progressbar (1.7.5)
+    thread_safe (0.3.5)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.11)
+  fuzzy_octo_train!
+  minitest
+  rake (~> 10.0)
+  reek
+  rubocop
+
+BUNDLED WITH
+   1.11.2
