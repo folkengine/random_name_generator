@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fuzzy_octo_train (0.1.0)
+    fuzzy_octo_train (0.0.1)
 
 GEM
   remote: https://rubygems.org/
