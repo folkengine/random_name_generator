@@ -1,4 +1,3 @@
-
 # SYLLABLE CLASSIFICATION:
 # Name is usually composed from 3 different class of syllables, which include prefix, middle part and suffix.
 # To declare syllable as a prefix in the file, insert "-" as a first character of the line.
@@ -19,36 +18,38 @@
 # 2) +c means that next syllable must definitely start with a consonant.
 # 3) -v means that this syllable can only be added to another syllable, that ends with a vocal.
 # 4) -c means that this syllable can only be added to another syllable, that ends with a consonant.
+#
 class Syllable
-
-  attr_accessor :syllable
+  attr_reader :syllable
 
   def initialize(arg)
     @is_prefix = false
     @is_suffix = false
 
     args = arg.to_s.split(' ')
-    self.parse(args[0])
+    parse_syllable(args[0])
   end
 
-  def is_prefix?
+  def prefix?
     @is_prefix
   end
 
-  def is_suffix?
+  def suffix?
     @is_suffix
   end
 
-  def parse(arg1)
-    if arg1[0].eql?('-') then
+  private
+
+  def parse_syllable(syll)
+    first_letter = syll[0]
+    if first_letter.eql?('-')
       @is_prefix = true
-      @syllable = arg1[1..-1]
-    elsif arg1[0].eql?('+') then
+      @syllable = syll[1..-1]
+    elsif first_letter.eql?('+')
       @is_suffix = true
-      @syllable = arg1[1..-1]
+      @syllable = syll[1..-1]
     else
-      @syllable = arg1
+      @syllable = syll
     end
   end
-
 end
