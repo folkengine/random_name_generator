@@ -1,6 +1,8 @@
 require 'minitest/autorun'
 require 'fuzzy_octo_train/syllable'
 
+include FuzzyOctoTrain
+
 describe Syllable do
   describe 'considering prefix?' do
     describe 'when marked as a prefix' do

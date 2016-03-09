@@ -1,6 +1,4 @@
-require 'fuzzy_octo_train/version'
+$LOAD_PATH << File.dirname(__FILE__)
 
-# Behold! The Fuzzy Octo Train!
-module FuzzyOctoTrain
-  # Your code goes here...
-end
+require 'fuzzy_octo_train/syllable'
+require 'fuzzy_octo_train/version'
