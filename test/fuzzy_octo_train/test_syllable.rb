@@ -6,17 +6,16 @@ include FuzzyOctoTrain
 describe Syllable do
   describe 'considering prefix?' do
     describe 'when marked as a prefix' do
-      ['-an', '-ang +v', '-ansr +v', '-cael', '-dae +c'].each do |s|
+      ['-an', '-ang +v', '  -ansr +v', '-cael   ', '-dae +c'].each do |s|
         it 'is_prefix? must return true' do
-          assert Syllable.new(s).prefix?
+          assert(Syllable.new(s).prefix?, "Syllable.new('#{s}').prefix? returns false")
         end
       end
     end
-
     describe 'when not marked as a prefix' do
       ['que -v +c', 'ria', 'rail', 'ther', 'thus', 'thi', 'san', '+ael -c'].each do |s|
         it 'is_prefix? must return false' do
-          refute Syllable.new(s).prefix?
+          refute(Syllable.new(s).prefix?, "Syllable.new('#{s}').prefix? returns true")
         end
       end
     end
@@ -26,7 +25,7 @@ describe Syllable do
     describe 'when marked as a suffix' do
       ['+ath', '+ess', '+san', '+yth', '+las', '+lian', '+evar'].each do |s|
         it 'is_suffix? must return true' do
-          assert Syllable.new(s).suffix?
+          assert(Syllable.new(s).suffix?, "Syllable.new('#{s}').is_suffix? returns false")
         end
       end
     end
@@ -34,7 +33,7 @@ describe Syllable do
     describe 'when not marked as a suffix' do
       ['-que -v +c', 'ria', 'rail', 'ther', 'thus', 'thi', 'san', 'ael -c'].each do |s|
         it 'is_suffix? must return false' do
-          refute Syllable.new(s).suffix?
+          refute(Syllable.new(s).suffix?, "Syllable.new('#{s}').is_suffix? returns true")
         end
       end
     end
@@ -44,14 +43,16 @@ describe Syllable do
     describe 'when marked true (+v)' do
       ['-ang +v', '-ansr +v -c'].each do |s|
         it 'next_syllable_must_start_with_vowel? must return true' do
-          assert Syllable.new(s).next_syllable_must_start_with_vowel?
+          assert(Syllable.new(s).next_syllable_must_start_with_vowel?,
+                 "Syllable.new('#{s}').next_syllable_must_start_with_vowel? returns false")
         end
       end
     end
     describe 'when marked false' do
       ['-ang -v', '-ansr -v +c', '-yada'].each do |s|
         it 'next_syllable_must_start_with_vowel? must return false' do
-          refute Syllable.new(s).next_syllable_must_start_with_vowel?
+          refute(Syllable.new(s).next_syllable_must_start_with_vowel?,
+                 "Syllable.new('#{s}').next_syllable_must_start_with_vowel? returns true")
         end
       end
     end
@@ -103,6 +104,74 @@ describe Syllable do
       ['-ang +v', '-ansr -v +c', '-yada'].each do |s|
         it 'previous_syllable_must_end_with_consonant? must return false' do
           refute Syllable.new(s).previous_syllable_must_end_with_consonant?
+        end
+      end
+    end
+  end
+
+  describe 'considering consonant_first?' do
+    describe 'when syllable starts with a consonant' do
+      ['-ng -c', '-sr +v -c', '-yada'].each do |s|
+        it 'consonant_first? must return true' do
+          assert Syllable.new(s).consonant_first?
+        end
+      end
+    end
+    describe 'when syllable starts with a vowel' do
+      ['-ang +v', '-ansr -v +c'].each do |s|
+        it 'consonant_first? must return false' do
+          refute Syllable.new(s).consonant_first?
+        end
+      end
+    end
+  end
+
+  describe 'considering vowel_first?' do
+    describe 'when syllable starts with a vowel' do
+      ['-ang +v', '-ansr -v +c', '-yada'].each do |s|
+        it 'vowel_first? must return true' do
+          assert(Syllable.new(s).vowel_first?)
+        end
+      end
+    end
+    describe 'when syllable starts with a consonant' do
+      ['-ng -c', '-sr +v -c'].each do |s|
+        it 'vowel_first? must return false' do
+          refute(Syllable.new(s).vowel_first?)
+        end
+      end
+    end
+  end
+
+  describe 'considering consonant_last?' do
+    describe 'when syllable ends with a consonant' do
+      ['-ng -c', '-sr +v -c', '-ansr'].each do |s|
+        it 'consonant_last? must return true' do
+          assert(Syllable.new(s).consonant_last?)
+        end
+      end
+    end
+    describe 'when syllable ends with a vowel' do
+      ['-yada', 'ria', 'thi'].each do |s|
+        it 'consonant_last? must return false' do
+          refute(Syllable.new(s).consonant_last?)
+        end
+      end
+    end
+  end
+
+  describe 'considering vowel_last?' do
+    describe 'when syllable starts with a vowel' do
+      ['-yada', 'ria', 'thi'].each do |s|
+        it 'vowel_last? must return true' do
+          assert(Syllable.new(s).vowel_last?, "Syllable.new('#{s}').vowel_last? returns false")
+        end
+      end
+    end
+    describe 'when syllable starts with a consonant' do
+      ['-kan', '+emar', '+nes', '+nin', 'dul', 'ean -c', 'el', 'emar'].each do |s|
+        it 'vowel_last? must return false' do
+          refute(Syllable.new(s).vowel_last?, "Syllable.new('#{s}').vowel_last? returns true")
         end
       end
     end

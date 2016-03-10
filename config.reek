@@ -1,2 +1,5 @@
 TooManyInstanceVariables:
     max_instance_variables: 10
+
+IrresponsibleModule:
+    enabled: false

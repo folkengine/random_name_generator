@@ -91,6 +91,7 @@ DEPENDENCIES
   guard
   guard-minitest
   minitest
+  pry
   rake (~> 10.0)
   reek
   rubocop

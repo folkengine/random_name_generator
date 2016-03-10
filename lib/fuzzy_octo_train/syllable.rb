@@ -22,6 +22,9 @@ module FuzzyOctoTrain
   class Syllable
     attr_reader :syllable
 
+    VOWELS = %w(i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ)
+    CONSONANTS = %w(b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z)
+
     def initialize(arg)
       @is_prefix = false
       @is_suffix = false
@@ -30,7 +33,7 @@ module FuzzyOctoTrain
       @previous_syllable_must_end_with_vowel = false
       @previous_syllable_must_end_with_consonant = false
 
-      args = arg.to_s.split(' ')
+      args = arg.to_s.strip.split(' ')
       parse_syllable(args[0])
       parse_flags(args[1..-1])
     end
@@ -41,6 +44,22 @@ module FuzzyOctoTrain
 
     def suffix?
       @is_suffix
+    end
+
+    def consonant_first?
+      CONSONANTS.include?(syllable[0])
+    end
+
+    def vowel_first?
+      VOWELS.include?(syllable[0])
+    end
+
+    def consonant_last?
+      CONSONANTS.include?(syllable[-1])
+    end
+
+    def vowel_last?
+      VOWELS.include?(syllable[-1])
     end
 
     def next_syllable_must_start_with_vowel?
@@ -57,6 +76,14 @@ module FuzzyOctoTrain
 
     def previous_syllable_must_end_with_consonant?
       @previous_syllable_must_end_with_consonant
+    end
+
+    def to_s
+      @syllable
+    end
+
+    def to_str
+      @syllable
     end
 
     private
