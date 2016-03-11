@@ -3,3 +3,6 @@ TooManyInstanceVariables:
 
 IrresponsibleModule:
     enabled: false
+
+TooManyMethods:
+    enabled: false

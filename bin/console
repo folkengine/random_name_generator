@@ -8,8 +8,9 @@ require 'fuzzy_octo_train'
 
 # (If you use this, don't forget to add pry to your Gemfile!)
 require 'pry'
-# Pry.start
-Pry.config.print = proc { |output, value| output.puts "=> #{value.to_s}" }
+
+# Override default value.inspect
+Pry.config.print = proc { |output, value| output.puts "=> #{value}" }
 Pry.start
 
 # require 'irb'
