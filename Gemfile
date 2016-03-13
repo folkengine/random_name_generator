@@ -6,6 +6,7 @@ gem 'pry'
 
 group :development do
   gem 'minitest'
+  gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'
   gem 'reek'

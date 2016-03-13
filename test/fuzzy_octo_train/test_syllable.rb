@@ -1,5 +1,6 @@
-require 'minitest/autorun'
 require 'fuzzy_octo_train/syllable'
+
+require_relative '../test_helper'
 
 include FuzzyOctoTrain
 
@@ -175,5 +176,26 @@ describe Syllable do
         end
       end
     end
+  end
+
+  describe 'considering compatible?' do
+    describe 'U <=> U' do
+      [['yada', 'ria']].each do |a_b|
+
+        before do
+          @before = Syllable.new(a_b[0])
+          @after = Syllable.new(a_b[1])
+        end
+
+        it 'u_u? must return true and compatible' do
+          assert(Syllable.u_u?(@before, @after), "Syllable.u_u?('#{@before}, #{@after}') returns false")
+        end
+
+        it 'compatible? must return true and compatible' do
+          assert(Syllable.compatible?(@before, @after), "Syllable.compatible?('#{@before}, #{@after}') returns false")
+        end
+      end
+    end
+
   end
 end

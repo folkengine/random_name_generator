@@ -22,7 +22,29 @@ module FuzzyOctoTrain
 
     def compose(syllables)
       pre = @pre_syllables.sample
-      expecting = determine_expecting(pre)
+
+      name = determine_middle_syllables(syllables, pre)
+
+      name << determine_last_syllable(name.last)
+
+      mid = Array.new(3)
+    end
+
+    def determine_middle_syllables(syllables, pre)
+      expecting = pre.next_syllable_requirement
+    end
+
+    # while (expecting == vowel && vocalFirst(pureSyl(sur.get(c))) == false || expecting == consonant && consonantFirst(pureSyl(sur.get(c))) == false
+    # || last == vowel && hatesPreviousVocals(sur.get(c)) || last == consonant && hatesPreviousConsonants(sur.get(c)));
+    def determine_next_syllable(this_syllable)
+      loop do
+        next_syllable = @mid_syllables
+        break if next_syllable.compatible_behind?(this_syllable)
+      end
+    end
+
+    def determine_last_syllable(next_to_last_syllable)
+
     end
 
     def refresh
@@ -41,17 +63,8 @@ module FuzzyOctoTrain
     def to_s
       "NameGenerator (#{@file.path})"
     end
-
-    private
-
-    def determine_expecting(syllable)
-      expecting = 0
-      if pre.next_syllable_must_start_with_vowel?
-        expecting = 1
-      elsif pre.next_syllable_must_start_with_consonant?
-        expecting = 2
-      end
-      expecting
-    end
   end
 end
+
+n = FuzzyOctoTrain::NameGenerator.new(FuzzyOctoTrain::ELVEN)
+n.compose(3)

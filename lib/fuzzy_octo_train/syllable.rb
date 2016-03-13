@@ -36,6 +36,28 @@ module FuzzyOctoTrain
       parse_flags(args[1..-1])
     end
 
+    def self.compatible?(a_link, b_link)
+      u_u?(a_link, b_link)
+    end
+
+    def self.u_u?(a_link, b_link)
+      (a_link.next_syllable_universal? && b_link.previous_syllable_universal?)
+    end
+
+    # while (expecting == vowel && vocalFirst(pureSyl(sur.get(c))) == false || expecting == consonant && consonantFirst(pureSyl(sur.get(c))) == false
+    # || last == vowel && hatesPreviousVocals(sur.get(c)) || last == consonant && hatesPreviousConsonants(sur.get(c)));
+    def compatible_behind?(previous_syllable)
+      (previous_syllable.next_syllable_universal? ||
+        (previous_syllable.next_syllable_must_start_with_vowel? && self.vowel_first?) ||
+          (previous_syllable.next_syllable_must_start_with_consonant? && self.consonant_first?))
+    end
+
+    def compatible_in_front?(next_syllable)
+      (next_syllable.next_syllable_universal? ||
+          (next_syllable.next_syllable_must_start_with_vowel? && self.vowel_first?) ||
+          (next_syllable.next_syllable_must_start_with_consonant? && self.consonant_first?))
+    end
+
     def prefix?
       @is_prefix
     end
@@ -60,12 +82,20 @@ module FuzzyOctoTrain
       VOWELS.include?(syllable[-1])
     end
 
+    def next_syllable_universal?
+      @next_syllable_requirement == :letter
+    end
+
     def next_syllable_must_start_with_vowel?
       @next_syllable_requirement == :vowel
     end
 
     def next_syllable_must_start_with_consonant?
       @next_syllable_requirement == :consonant
+    end
+
+    def previous_syllable_universal?
+      @previous_syllable_requirement == :letter
     end
 
     def previous_syllable_must_end_with_vowel?
