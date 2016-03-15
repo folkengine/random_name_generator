@@ -38,8 +38,8 @@ module FuzzyOctoTrain
     # || last == vowel && hatesPreviousVocals(sur.get(c)) || last == consonant && hatesPreviousConsonants(sur.get(c)));
     def determine_next_syllable(this_syllable)
       loop do
-        next_syllable = @mid_syllables
-        break if next_syllable.compatible_behind?(this_syllable)
+        next_syllable = @mid_syllables.sample
+        break unless this_syllable.incompatible?(next_syllable)
       end
     end
 

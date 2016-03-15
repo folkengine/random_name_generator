@@ -20,30 +20,40 @@
 # 4) -c means that this syllable can only be added to another syllable, that ends with a consonant.
 module FuzzyOctoTrain
   class Syllable
-    attr_reader :syllable, :next_syllable_requirement, :previous_syllable_requirement
+    attr_reader :raw, :syllable, :next_syllable_requirement, :previous_syllable_requirement
 
     VOWELS = %w(i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ)
     CONSONANTS = %w(b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z)
 
-    def initialize(arg)
-      @is_prefix = false
-      @is_suffix = false
-      @next_syllable_requirement = :letter
-      @previous_syllable_requirement = :letter
-
-      args = arg.to_s.strip.split(' ')
-      parse_syllable(args[0])
-      parse_flags(args[1..-1])
+    def initialize(args)
+      if args.is_a?(Syllable) then
+        and_so_it_begins(args.raw)
+      else
+        and_so_it_begins(args)
+      end
     end
 
-    def self.compatible?(a_link, b_link)
-      u_u?(a_link, b_link)
+    def incompatible?(next_syllable)
+      a = (next_syllable_must_start_with_vowel? && next_syllable.consonant_first?)
+      b = (next_syllable_must_start_with_consonant? && next_syllable.vowel_first?)
+      c = (vowel_last? && next_syllable.previous_syllable_must_end_with_consonant?)
+      d = (consonant_last? && next_syllable.previous_syllable_must_end_with_vowel?)
+
+      (a || b || c  || d)
+    end
+
+    def compatible?(next_syllable)
+      incompatible = incompatible?(next_syllable)
+      ! incompatible
     end
 
     def self.u_u?(a_link, b_link)
       (a_link.next_syllable_universal? && b_link.previous_syllable_universal?)
     end
 
+    # while (expecting == 1 && vocalFirst(pureSyl(mid.get(b[i]))) == false || expecting == 2 && consonantFirst(pureSyl(mid.get(b[i]))) == false
+    # || last == 1 && hatesPreviousVocals(mid.get(b[i])) || last == 2 && hatesPreviousConsonants(mid.get(b[i])));
+    #
     # while (expecting == vowel && vocalFirst(pureSyl(sur.get(c))) == false || expecting == consonant && consonantFirst(pureSyl(sur.get(c))) == false
     # || last == vowel && hatesPreviousVocals(sur.get(c)) || last == consonant && hatesPreviousConsonants(sur.get(c)));
     def compatible_behind?(previous_syllable)
@@ -116,7 +126,23 @@ module FuzzyOctoTrain
 
     private
 
+    def and_so_it_begins(raw)
+      @raw = raw
+
+      @is_prefix = false
+      @is_suffix = false
+      @next_syllable_requirement = :letter
+      @previous_syllable_requirement = :letter
+
+      args = raw.to_s.strip.split(' ')
+      parse_syllable(args[0])
+      parse_flags(args[1..-1])
+    end
+
     def parse_syllable(syll)
+      if (syll.nil? || syll.empty?)
+        raise ArgumentError.new('Empty String is not allowed.')
+      end
       captures = /([+-]?)(.+)/.match(syll).captures
       parse_prefix(captures[0])
       @syllable = captures[1]
