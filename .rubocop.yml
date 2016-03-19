@@ -1,5 +1,22 @@
-Metrics/LineLength:
+Metrics/ClassLength:
+  Description: 'Avoid classes longer than 100 lines of code.'
   Enabled: false
 
-Documentation:
+Metrics/LineLength:
+  Description: 'Limit lines to 80 characters.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
+  Enabled: false
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Style/MultilineIfThen:
+  Description: 'Do not use then for multi-line if/unless.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-then'
+  Enabled: false
+
+Style/WordArray:
+  Description: 'Use %w or %W for arrays of words.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#percent-w'
   Enabled: false
