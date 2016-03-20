@@ -1,5 +1,7 @@
 # FuzzyOctoTrain
 
+[![Build Status](https://travis-ci.org/folkengine/fuzzy_octo_train.svg?branch=master)](https://travis-ci.org/folkengine/fuzzy_octo_train)
+
 Ruby port of [java-random-name-generator](https://github.com/folkengine/java-random-name-generator).
 
 ------
@@ -36,5 +38,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fuzzy_octo_train.
+Bug reports and pull requests are welcome on GitHub at https://github.com/folkengine/fuzzy_octo_train.
 
