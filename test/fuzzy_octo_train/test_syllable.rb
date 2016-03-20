@@ -3,7 +3,7 @@ require_relative '../test_helper'
 
 include FuzzyOctoTrain
 
-class FizzBuzzTest < Minitest::Test
+class TestSyllable < Minitest::Test
   def test_prefix_returns_true_if_marked
     ['-an', '-ang +v', '  -ansr +v', '-cael   ', '-dae +c'].each do |s|
       assert Syllable.new(s).prefix?, "Syllable.new('#{s}').prefix? returns false"

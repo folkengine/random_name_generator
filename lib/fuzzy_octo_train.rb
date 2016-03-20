@@ -12,22 +12,26 @@ module FuzzyOctoTrain
   ROMAN = File.new("#{dirname}/languages/roman.txt")
 
   class NameGenerator
+
+    attr_reader :pre, :pre_syllables, :sur_syllables, :mid_syllables
+
     def initialize(filename)
       @file = File.new(filename)
       @pre_syllables = []
       @sur_syllables = []
       @mid_syllables = []
+
       refresh
     end
 
     def compose(syllables)
-      pre = @pre_syllables.sample
+      @pre = pre_syllables.sample
 
-      name = determine_middle_syllables(syllables, pre)
-
-      name << determine_last_syllable(name.last)
-
-      mid = Array.new(3)
+      # name = determine_middle_syllables(syllables, pre)
+      #
+      # name << determine_last_syllable(name.last)
+      #
+      # mid = Array.new(3)
     end
 
     def determine_middle_syllables(syllables, pre)
