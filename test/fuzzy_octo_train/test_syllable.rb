@@ -1,63 +1,49 @@
 require 'fuzzy_octo_train/syllable'
-
 require_relative '../test_helper'
 
 include FuzzyOctoTrain
 
+class FizzBuzzTest < Minitest::Test
+  def prefix_returns_true_if_marked
+    ['-an', '-ang +v', '  -ansr +v', '-cael   ', '-dae +c'].each do |s|
+      assert Syllable.new(s).prefix?, "Syllable.new('#{s}').prefix? returns false"
+    end
+  end
+
+  def prefix_returns_false_if_not_marked
+    ['que -v +c', 'ria', 'rail', 'ther', 'thus', 'thi', 'san', '+ael -c'].each do |s|
+      refute Syllable.new(s).prefix?, "Syllable.new('#{s}').prefix? returns true"
+    end
+  end
+
+  def suffix_returns_true_if_marked
+    ['+ath', '+ess', '+san', '+yth', '+las', '+lian', '+evar'].each do |s|
+      assert Syllable.new(s).suffix?, "Syllable.new('#{s}').is_suffix? returns false"
+    end
+  end
+
+  def suffix_returns_false_if_not_marked
+    ['-que -v +c', 'ria', 'rail', 'ther', 'thus', 'thi', 'san', 'ael -c'].each do |s|
+      refute Syllable.new(s).suffix?, "Syllable.new('#{s}').is_suffix? returns true"
+    end
+  end
+
+  def next_syllable_must_start_with_vowel_returns_true_if_marked
+    ['-ang +v', '-ansr +v -c'].each do |s|
+      assert(Syllable.new(s).next_syllable_must_start_with_vowel?,
+             "Syllable.new('#{s}').next_syllable_must_start_with_vowel? returns false")
+    end
+  end
+
+  def next_syllable_must_start_with_vowel_returns_false_if_not_marked
+    ['-ang -v', '-ansr -v +c', '-yada'].each do |s|
+      refute(Syllable.new(s).next_syllable_must_start_with_vowel?,
+             "Syllable.new('#{s}').next_syllable_must_start_with_vowel? returns true")
+    end
+  end
+end
+
 describe Syllable do
-  describe 'considering prefix?' do
-    describe 'when marked as a prefix' do
-      ['-an', '-ang +v', '  -ansr +v', '-cael   ', '-dae +c'].each do |s|
-        it 'is_prefix? must return true' do
-          assert(Syllable.new(s).prefix?, "Syllable.new('#{s}').prefix? returns false")
-        end
-      end
-    end
-    describe 'when not marked as a prefix' do
-      ['que -v +c', 'ria', 'rail', 'ther', 'thus', 'thi', 'san', '+ael -c'].each do |s|
-        it 'is_prefix? must return false' do
-          refute(Syllable.new(s).prefix?, "Syllable.new('#{s}').prefix? returns true")
-        end
-      end
-    end
-  end
-
-  describe 'considering suffix?' do
-    describe 'when marked as a suffix' do
-      ['+ath', '+ess', '+san', '+yth', '+las', '+lian', '+evar'].each do |s|
-        it 'is_suffix? must return true' do
-          assert(Syllable.new(s).suffix?, "Syllable.new('#{s}').is_suffix? returns false")
-        end
-      end
-    end
-
-    describe 'when not marked as a suffix' do
-      ['-que -v +c', 'ria', 'rail', 'ther', 'thus', 'thi', 'san', 'ael -c'].each do |s|
-        it 'is_suffix? must return false' do
-          refute(Syllable.new(s).suffix?, "Syllable.new('#{s}').is_suffix? returns true")
-        end
-      end
-    end
-  end
-
-  describe 'considering next_syllable_must_start_with_vowel?' do
-    describe 'when marked true (+v)' do
-      ['-ang +v', '-ansr +v -c'].each do |s|
-        it 'next_syllable_must_start_with_vowel? must return true' do
-          assert(Syllable.new(s).next_syllable_must_start_with_vowel?,
-                 "Syllable.new('#{s}').next_syllable_must_start_with_vowel? returns false")
-        end
-      end
-    end
-    describe 'when marked false' do
-      ['-ang -v', '-ansr -v +c', '-yada'].each do |s|
-        it 'next_syllable_must_start_with_vowel? must return false' do
-          refute(Syllable.new(s).next_syllable_must_start_with_vowel?,
-                 "Syllable.new('#{s}').next_syllable_must_start_with_vowel? returns true")
-        end
-      end
-    end
-  end
 
   describe 'considering next_syllable_must_start_with_consonant?' do
     describe 'when marked true (+c)' do
