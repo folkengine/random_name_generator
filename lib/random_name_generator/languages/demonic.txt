@@ -16,6 +16,7 @@
 -am
 -an
 -anc
+-and +c
 -ang
 -anti
 -ap
@@ -30,8 +31,10 @@ ama -c +c
 ay -c
 ast -c
 bat
+dra +c
 dus
 ez -c +v
+ha -c +c
 i -c +c
 ia -c +c
 it -c -v
@@ -43,6 +46,7 @@ or
 ra +c
 rat
 rax +v
+real
 sh
 thi +c
 
@@ -53,6 +57,7 @@ thi +c
 +es -c
 +ias -c
 +iel
++ka
 +lat
 +lech
 +ma
@@ -63,6 +68,7 @@ thi +c
 +on -c
 +rept -v
 +res
++s -v
 +van
 +xas -v
 +y -c
@@ -71,9 +77,6 @@ thi +c
 
 # https://en.wikipedia.org/wiki/The_infernal_names
 
-
-Andhaka (Hindu mythology)
-Andras (Christian demonology)
 Andrealphus (Christian demonology)
 Andromalius (Christian demonology)
 Antichrist (Christian demonology)

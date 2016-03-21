@@ -70,6 +70,18 @@ bin/random_name_generator [-efgr?]
 
 Add the gem's bin directory to you path in order to have instant access to RandomNameGenerator.
 
+## Porting and Refactoring Notes
+
+The big refactoring over the original Java version is the creation of the RNGSyllable class. It takes 
+over most of the complexity of parsing each syllable, greatly simplifying the Random Name Generator code.
+ 
+Part of the reason for working on this gem was to work on the following goals to improve my Ruby craft:
+
+* Code confidently in the spirit of Advi Grimm's [Confident Ruby](http://www.confidentruby.com/).
+* Use [Travis-CI](https://travis-ci.org/folkengine/random_name_generator) for build validation.
+* Use [Rubocop](https://github.com/bbatsov/rubocop) and [Reek](https://github.com/troessner/reek) for code quality. 
+* Deploy it to [RubyGems.org](https://rubygems.org/gems/random_name_generator).
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -83,6 +95,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 * [Rubocop](https://github.com/bbatsov/rubocop)
 
 ## Alternatives
+
+There are several other great name generator gems. They really aren't designed for fantasy style names.
 
 * [Faker](https://github.com/stympy/faker)
 * [Namey](https://github.com/muffinista/namey)

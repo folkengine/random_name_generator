@@ -78,8 +78,7 @@ class RandomNameGenerator
   end
 
   def self.pick_number_of_syllables
-    distribution = [2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5]
-    distribution.sample
+    [2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5].sample
   end
 
   def to_s
