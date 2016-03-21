@@ -43,20 +43,6 @@ module FuzzyOctoTrain
       (next_incompatible?(next_syllable) || previous_incompatible?(next_syllable))
     end
 
-    def next_incompatible?(next_syllable)
-      vnc = (next_syllable_must_start_with_vowel? && next_syllable.consonant_first?)
-      cnv = (next_syllable_must_start_with_consonant? && next_syllable.vowel_first?)
-
-      (vnc || cnv)
-    end
-
-    def previous_incompatible?(next_syllable)
-      vlc = (vowel_last? && next_syllable.previous_syllable_must_end_with_consonant?)
-      clv = (consonant_last? && next_syllable.previous_syllable_must_end_with_vowel?)
-
-      (vlc || clv)
-    end
-
     def compatible?(next_syllable)
       !incompatible?(next_syllable)
     end
@@ -152,6 +138,20 @@ module FuzzyOctoTrain
       elsif flags.include?('-c')
         @previous_syllable_requirement = :consonant
       end
+    end
+
+    def next_incompatible?(next_syllable)
+      vnc = (next_syllable_must_start_with_vowel? && next_syllable.consonant_first?)
+      cnv = (next_syllable_must_start_with_consonant? && next_syllable.vowel_first?)
+
+      (vnc || cnv)
+    end
+
+    def previous_incompatible?(next_syllable)
+      vlc = (vowel_last? && next_syllable.previous_syllable_must_end_with_consonant?)
+      clv = (consonant_last? && next_syllable.previous_syllable_must_end_with_vowel?)
+
+      (vlc || clv)
     end
   end
 end

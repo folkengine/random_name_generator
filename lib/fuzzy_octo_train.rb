@@ -12,7 +12,6 @@ module FuzzyOctoTrain
   ROMAN = File.new("#{dirname}/languages/roman.txt")
 
   class NameGenerator
-
     attr_reader :pre, :pre_syllables, :sur_syllables, :mid_syllables
 
     def initialize(filename)
@@ -24,31 +23,40 @@ module FuzzyOctoTrain
       refresh
     end
 
-    def compose(syllables)
+    def compose(count)
       @pre = pre_syllables.sample
-
-      # name = determine_middle_syllables(syllables, pre)
-      #
-      # name << determine_last_syllable(name.last)
-      #
-      # mid = Array.new(3)
+      return @pre.to_s.capitalize if count < 2
+      name = determine_middle_syllables(count - 2, pre)
+      name << determine_last_syllable(name.last)
+      name.map(&:to_s).join.capitalize
     end
 
-    def determine_middle_syllables(syllables, pre)
-      expecting = pre.next_syllable_requirement
-    end
-
-    # while (expecting == vowel && vocalFirst(pureSyl(sur.get(c))) == false || expecting == consonant && consonantFirst(pureSyl(sur.get(c))) == false
-    # || last == vowel && hatesPreviousVocals(sur.get(c)) || last == consonant && hatesPreviousConsonants(sur.get(c)));
-    def determine_next_syllable(this_syllable)
-      loop do
-        next_syllable = @mid_syllables.sample
-        break unless this_syllable.incompatible?(next_syllable)
-      end
+    def determine_middle_syllables(count, pre)
+      determine_next_syllables(count, pre, @mid_syllables)
     end
 
     def determine_last_syllable(next_to_last_syllable)
+      determine_next_syllable(next_to_last_syllable, @sur_syllables)
+    end
 
+    def determine_next_syllables(count, pre, syllables)
+      name = Array(pre)
+      return name if count < 1
+      next_syllable = pre
+      count.times do
+        next_syllable = determine_next_syllable(next_syllable, syllables)
+        name << next_syllable
+      end
+      name
+    end
+
+    def determine_next_syllable(this_syllable, sampler)
+      next_syllable = ''
+      loop do
+        next_syllable = sampler.sample
+        break unless this_syllable.incompatible?(next_syllable)
+      end
+      next_syllable
     end
 
     def refresh
@@ -70,5 +78,13 @@ module FuzzyOctoTrain
   end
 end
 
-n = FuzzyOctoTrain::NameGenerator.new(FuzzyOctoTrain::ELVEN)
-n.compose(3)
+n =FuzzyOctoTrain::NameGenerator.new(FuzzyOctoTrain::ELVEN)
+puts n.compose(0)
+puts n.compose(1)
+puts n.compose(2)
+puts n.compose(3)
+puts n.compose(4)
+
+
+
+
