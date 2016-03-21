@@ -1,9 +1,9 @@
 $LOAD_PATH << File.dirname(__FILE__)
 
-require 'fuzzy_octo_train/syllable'
-require 'fuzzy_octo_train/version'
+require 'random_name/syllable'
+require 'random_name/version'
 
-module FuzzyOctoTrain
+module RandomName
   dirname = File.dirname(__FILE__)
 
   ELVEN = File.new("#{dirname}/languages/elven.txt")
@@ -11,7 +11,7 @@ module FuzzyOctoTrain
   GOBLIN = File.new("#{dirname}/languages/goblin.txt")
   ROMAN = File.new("#{dirname}/languages/roman.txt")
 
-  class NameGenerator
+  class Generator
     attr_reader :pre, :pre_syllables, :sur_syllables, :mid_syllables
 
     def initialize(filename)
@@ -78,7 +78,7 @@ module FuzzyOctoTrain
   end
 end
 
-n =FuzzyOctoTrain::NameGenerator.new(FuzzyOctoTrain::ELVEN)
+n = RandomName::Generator.new(RandomName::ELVEN)
 puts n.compose(0)
 puts n.compose(1)
 puts n.compose(2)

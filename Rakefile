@@ -3,7 +3,7 @@ require 'rake/testtask'
 require 'reek/rake/task'
 require 'rubocop/rake_task'
 
-task default: :test
+task default: :testw
 
 Reek::Rake::Task.new do |t|
   t.fail_on_error = false

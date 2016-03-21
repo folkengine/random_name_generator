@@ -1,7 +1,7 @@
-require 'fuzzy_octo_train/syllable'
+require 'random_name/syllable'
 require_relative '../test_helper'
 
-include FuzzyOctoTrain
+include RandomName
 
 class TestSyllable < Minitest::Test
   def test_prefix_returns_true_if_marked

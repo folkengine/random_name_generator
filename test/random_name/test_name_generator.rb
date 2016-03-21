@@ -1,11 +1,11 @@
-require 'fuzzy_octo_train'
+require 'random_name'
 require_relative '../test_helper'
 
-include FuzzyOctoTrain
+include RandomName
 
 class TestNameGenerator < Minitest::Test
   def test_compose
-    fuzz = NameGenerator.new(NameGenerator::ELVEN)
+    fuzz = Generator.new(Generator::ELVEN)
     fuzz.pre_syllables.stubs(:sample).returns(Syllable.new('foo')).returns(Syllable.new('bar'))
     fuzz.compose(3)
 
@@ -15,7 +15,7 @@ class TestNameGenerator < Minitest::Test
   end
 
   def test_determine_next_syllable
-    fuzz = NameGenerator.new(NameGenerator::ELVEN)
+    fuzz = Generator.new(Generator::ELVEN)
     fuzz.mid_syllables.stubs(:sample).returns(Syllable.new('oh')).returns(Syllable.new('bar'))
     next_syllable = fuzz.determine_next_syllable(Syllable.new('foo +c'), fuzz.mid_syllables)
     assert_equal('bar', next_syllable.to_s)

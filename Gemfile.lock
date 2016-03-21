@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fuzzy_octo_train (0.0.1)
+    random_name (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -97,7 +97,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.11)
-  fuzzy_octo_train!
   guard
   guard-minitest
   minitest
@@ -105,6 +104,7 @@ DEPENDENCIES
   mocha
   pry
   rake (~> 10.0)
+  random_name!
   reek
   rubocop
 

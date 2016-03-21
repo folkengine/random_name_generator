@@ -18,7 +18,7 @@
 # 2) +c means that next syllable must definitely start with a consonant.
 # 3) -v means that this syllable can only be added to another syllable, that ends with a vocal.
 # 4) -c means that this syllable can only be added to another syllable, that ends with a consonant.
-module FuzzyOctoTrain
+module RandomName
   class Syllable
     attr_reader :raw, :syllable, :next_syllable_requirement, :previous_syllable_requirement
 

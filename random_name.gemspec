@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fuzzy_octo_train/version'
+require 'random_name/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fuzzy_octo_train'
-  spec.version       = FuzzyOctoTrain::VERSION
+  spec.name          = 'random_name'
+  spec.version       = RandomName::VERSION
   spec.authors       = ['folkengine']
   spec.email         = ['gaoler@electronicpanopticon.com']
 

@@ -11,6 +11,10 @@ Ruby port of [java-random-name-generator](https://github.com/folkengine/java-ran
 * [Reek](https://github.com/troessner/reek)
 * [Rubocop](https://github.com/bbatsov/rubocop)
 
+## Alternatives
+
+* [How To Write A Name Generator (In Ruby)](http://www.skorks.com/2009/07/how-to-write-a-name-generator-in-ruby/)
+
 ------
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fuzzy_octo_train`. To experiment with that code, run `bin/console` for an interactive prompt.
