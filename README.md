@@ -1,25 +1,15 @@
-# FuzzyOctoTrain
+# RandomNameGenerator
 
 [![Build Status](https://travis-ci.org/folkengine/random_name_generator.svg?branch=master)](https://travis-ci.org/folkengine/random_name_generator)
 
 Ruby port of [java-random-name-generator](https://github.com/folkengine/java-random-name-generator).
 
-## Dependencies
-
-* [Minitest](https://github.com/seattlerb/minitest)
-* [Mocha](https://github.com/freerange/mocha)
-* [Reek](https://github.com/troessner/reek)
-* [Rubocop](https://github.com/bbatsov/rubocop)
-
-## Alternatives
-
-* [How To Write A Name Generator (In Ruby)](http://www.skorks.com/2009/07/how-to-write-a-name-generator-in-ruby/)
+The big difference between this random name generator and others is that it allows you to create names in various
+custom styles such as Elven, and Roman. If you're looking for a quick name for a Goblin NPC, RandomNameGenerator is
+your gem.
 
 ------
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fuzzy_octo_train`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -39,9 +29,46 @@ Or install it yourself as:
 
 ## Usage
 
-```ruby
+RandomNameGenerator comes with several styles of syllable files:
+[Elven](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/languages/elven.txt),
+[Fantasy](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/languages/fantasy.txt),
+[Goblin](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/languages/goblin.txt),
+and [Roman](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/languages/roman.txt).
+By default it uses Fantasy. Instantiate RandomNameGenerator and then call compose on the object to generate a random name.
+If you don't pass in the number of syllables you want for your name  to compose, it will randomly pick between 3 and 6.
 
+```ruby
+require 'random_name_generator'
+
+rng = RandomNameGenerator.new
+puts rng.compose(3)
 ```
+
+Pass in a reference to specific syllable file to get different styles of random names:
+
+```ruby
+rng = RandomNameGenerator.new(RandomNameGenerator::GOBLIN)
+puts rng.compose(3)
+```
+
+Flip mode will create a RandomNameGenerator object, randomly assigning the syllable file for you.
+
+```ruby
+flip = RandomNameGenerator.flip_mode
+puts flip.compose
+```
+
+You can also pass in your own syllable files. See
+[RNGSyllable.rb](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/rng_syllable.rb)
+for the required specification.
+
+RandomNameGenerator also comes with a command line interface which will generate a first and last name for you:
+
+```ruby
+bin/random_name_generator [-efgr?]
+```
+
+Add the gem's bin directory to you path in order to have instant access to RandomNameGenerator.
 
 ## Development
 
@@ -49,7 +76,18 @@ After checking out the repo, run `bin/setup` to install dependencies. You can al
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+## Dependencies
+
+* [Mocha](https://github.com/freerange/mocha)
+* [Reek](https://github.com/troessner/reek)
+* [Rubocop](https://github.com/bbatsov/rubocop)
+
+## Alternatives
+
+* [Faker](https://github.com/stympy/faker)
+* [Namey](https://github.com/muffinista/namey)
+* [How To Write A Name Generator (In Ruby)](http://www.skorks.com/2009/07/how-to-write-a-name-generator-in-ruby/)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/folkengine/random_name_generator.
-

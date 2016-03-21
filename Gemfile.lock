@@ -46,11 +46,10 @@ GEM
     parser (2.3.0.6)
       ast (~> 2.2)
     powerpack (0.1.1)
-    pry (0.8.3)
-      coderay (>= 0.9.7)
-      method_source (>= 0.4.0)
-      ruby_parser (>= 2.0.5)
-      slop (>= 1.5.3)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rainbow (2.1.0)
     rake (10.5.0)
     rb-fsevent (0.9.7)
@@ -67,10 +66,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.7.5)
-    ruby_parser (3.8.1)
-      sexp_processor (~> 4.1)
-    sexp_processor (4.7.0)
-    slop (4.3.0)
+    slop (3.6.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     unicode-display_width (1.0.2)
@@ -90,12 +86,11 @@ DEPENDENCIES
   minitest
   minitest-reporters
   mocha
-  pry
+  pry (~> 0.10.3)
   rake (~> 10.0)
   random_name_generator!
   reek
   rubocop
-  slop (~> 4.2, >= 4.2.1)
 
 BUNDLED WITH
    1.11.2
