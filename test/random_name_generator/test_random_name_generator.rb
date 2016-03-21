@@ -18,4 +18,29 @@ class TestRandomNameGenerator < Minitest::Test
     next_syllable = fuzz.determine_next_syllable(RNGSyllable.new('foo +c'), fuzz.mid_syllables)
     assert_equal('bar', next_syllable.to_s)
   end
+
+  def test_default_lang
+    fuzz = RandomNameGenerator.new
+    refute_empty fuzz.compose
+  end
+
+  def test_elven
+    fuzz = RandomNameGenerator.new(RandomNameGenerator::ELVEN)
+    refute_empty fuzz.compose
+  end
+
+  def test_fantasy
+    fuzz = RandomNameGenerator.new(RandomNameGenerator::FANTASY)
+    refute_empty fuzz.compose
+  end
+
+  def test_goblin
+    fuzz = RandomNameGenerator.new(RandomNameGenerator::GOBLIN)
+    refute_empty fuzz.compose
+  end
+
+  def test_roman
+    fuzz = RandomNameGenerator.new(RandomNameGenerator::ROMAN)
+    refute_empty fuzz.compose
+  end
 end

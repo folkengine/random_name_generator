@@ -1,0 +1,334 @@
+-æ +c
+-aa +c
+-ab
+-aby +c
+-ad
+-ae +c
+-ag
+-ahr +v
+-ai +c
+-ak +v
+-aka +c
+-ake +c
+-ako +c
+-al
+-all
+-am
+-an
+-anc
+-ang
+-anti
+-ap
+-hab
+-mai
+-mal
+
+add -c +v
+al -c
+am -c
+ama -c +c
+ay -c
+ast -c
+bat
+dus
+ez -c +v
+i -c +c
+ia -c +c
+it -c -v
+loc +v
+ma +c
+oc
+olly -c +v
+or
+ra +c
+rat
+rax +v
+sh
+thi +c
+
++al
++as
++bou -v
++er -c
++es -c
++ias -c
++iel
++lat
++lech
++ma
++man
++mon
++nah
++nyu
++on -c
++rept -v
++res
++van
++xas -v
++y -c
++ym
++zou
+
+# https://en.wikipedia.org/wiki/The_infernal_names
+
+
+Andhaka (Hindu mythology)
+Andras (Christian demonology)
+Andrealphus (Christian demonology)
+Andromalius (Christian demonology)
+Antichrist (Christian demonology)
+Anzu (Sumerian mythology)
+Armaros (Jewish demonology)
+Archon (Gnosticism)
+Arunasura [Hindu mythology]
+Asag (Sumerian demonology)
+Asakku (Babylonian mythology)
+Asb'el (Jewish mythology)
+Asmodai/Asmodeus (Jewish folklore and Christian demonology)
+Astaroth (Christian demonology)
+Asura (Hindu mythology)
+Azazel / Azaz'el (Jewish demonology)
+Azi Dahaka/Dahak (Zoroastrianism)
+
+Ahpuch - Mayan devil
+Ahriman - Mazdean devil
+Angra Mainyu - Zoroasterism synonym for devil
+Apollyon - Greek synonym for Abaddon.
+Asmodeus - Hebrew devil of sensuality and luxury, originally "creature of judgment"
+Azazel - Taught man to make weapons of war (Hebrew)
+Baalberith - Canaanite Lord of the covenant who was later made a devil
+Balaam - Hebrew devil of avarice and greed
+Baphomet - symbolic of Satan
+Beelzebub - Lord of the Flies, taken from the symbolism of the scarab (Hebrew)
+Behemoth - Hebrew personification of Lucifer in the form of an elephant or hippopotamus
+Beherit - Syriac name for Satan
+Chemosh - National god of Moabites, later a devil
+Cimeries - Rides a black horse and rules Africa
+Dagon - Philistine avenging devil of the sea
+Demogorgon - a name so terrible as to not be known to mortals
+Diabolous - "Flowing downwards" (Greek)
+Dracula - Romanian name for son of the devil or dragon, which would also denote a "devilish" name—Romanian isn't too clear on which meaning, if not both, is correct.
+Euronymous - Greek Prince of Death (a misspelling, correct spelling Eurynomos)
+Gorgo - dim. of Demogorgon, see above
+Guayota - guanche devil
+Haborym - Hebrew synonym for Satan
+Iblis - Synonym for Shaitan
+Leviathan - Hebrew personification of Lucifer in the form of a great sea reptile (usually it represents the Antichrist; the beast of the sea)
+Lilith - Hebrew female devil, Adam's first wife who taught him lust
+Loki - Teutonic devil
+Mammon - Aramaic god of wealth and profit
+Marduk - god of the city of Babylon
+Mastema - Hebrew synonym for Satan
+Melek Taus - Yezidi devil
+Mephistopheles - he who shuns the light, q.v. Faust (Greek)
+Milcom - Ammonite devil
+Moloch - Phoenician and Canaanite devil
+Mormo - King of the Ghouls, consort of Hecate (Greek)
+Naamah - Hebrew female devil of seduction
+Nihasa - American Indian devil
+O-Yama - Japanese name for lord of death
+Pwcca - one of the myriad of fairy (faerie) folk
+Saitan - Enochian equivalent of Satan
+Samael - "Venom of God" (Hebrew)
+Samnu - Central Asian devil
+Sedit - American Nepali devil
+Shaitan - Arabic name for Satan
+T'an-mo - Chinese counterpart to the devil, covetousness, desire
+Tchort - Russian name for Satan, "black god"
+Typhon - Greek personification of devil
+Yama - The lord of death in Hinduism
+Yen-lo-Wang - Chinese ruler of Hell
+
+# https://en.wikipedia.org/wiki/List_of_theological_demons
+
+Baal/Bael (Christian demonology)
+Babi ngepet (Indonesian mythology)
+Bakasura (Hindu mythology)
+Balam (Christian demonology)
+Balberith (Jewish demonology)
+Bali Raj (Hindu mythology)
+Banshee (Irish mythology)
+Baphomet (Christian folklore)
+Barbas (Christian demonology)
+Barbatos (Christian demonology)
+Barong (Indonesian mythology)
+Bathin/Mathim/Bathym/Marthim (Christian demonology)
+Beelzebub (Jewish demonology, Christian demonology)
+Behemoth (Jewish demonology)
+Belial (Jewish demonology, Christian demonology)
+Beleth (Christian demonology)
+Belphegor (Christian demonology)
+Berith/Beherit (Phoenician mythology, Christian demonology)
+Bhūta (Sanskrit)
+Bifrons (Christian demonology)
+Boruta (Slavic mythology)
+Botis (Christian demonology)
+Buer (Christian demonology)
+Bukavac (Slavic mythology)
+Bune (Christian demonology)
+Bushyasta (Zoroastrianism)
+
+Cain/Canio (Christian demonology)
+Charun (Etruscan mythology)
+Chemosh (Moabite)
+Choronzon (Thelema)
+Cimejes/Kimaris/Cimeies (Christian demonology)
+Corson (Christian demonology)
+Crocell/Procell (Christian demonology)
+Culsu (Etruscan mythology)
+
+Daeva (Zoroastrianism demonology)
+Dagon (Semitic mythology)
+Dajjal (Islamic demonology)
+Dantalion (Christian demonology)
+Danjal (Jewish mythology)
+Davy Jones (nautical folklore)
+Decarabia (Christian demonology)
+Demiurge (Gnosticism)
+Demogorgon (Christian demonology)
+Devil (Christian demonology)
+Div-e Sepid (Persian mythology)
+Drekavac (Slavic mythology)
+Dzoavits (Native American mythology)
+
+Eblis (or Iblis) (Islamic demonology)
+Eligos (Christian demonology)
+Eisheth (Jewish demonology)
+
+Focalor (Christian demonology)
+Foras/Forcas/Forras/ (Christian demonology)
+Forneus (Christian demonology)
+Furcas/Forcas (Christian demonology)
+Furfur (Christian demonology)
+
+Gaap (Christian demonology)
+Gader'el (Jewish demonology)
+Gaki (Japanese mythology)
+Gamigin (Christian demonology)
+Ghoul (Arabian and several other mythologies)
+Glasya-Labolas/Caacrinolaas/Caassimolar/Classyalabolas/Glassia-labolis (Christian demonology)
+Gorgon (Greek mythology)
+Gremory/Gomory (Christian demonology)
+Grigori (Jewish demonology)
+Gualichu (Mapuche mythology)
+Guayota (Guanche)
+Gusion/Gusoin/Gusoyn
+
+Haagenti (Christian demonology)
+Halphas/Malthus (Christian demonology)
+Hantu Raya (Indonesian and Malaysian mythology)
+Haures/Flauros/Flavros/Hauras/Havres (Christian demonology)
+
+Ifrit (Islamic mythology)
+Incubus (Christian demonology, Chaldean mythology, Jewish folklore)
+Ipos/Ipes (Christian demonology)
+
+Jinn (Islamic demonology)
+Jikininki (Japanese mythology)
+
+Kabandha/Kabhanda (Hinduism)
+Kali (Hinduism)
+Kasadya (Jewish demonology)
+Kokabiel (Jewish demonology)
+Kroni (Ayyavazhi demonology)
+Krampus (Germanic-Christian Demonology)
+Killakee Cat (Hell Fire Club/Satanism)
+Kumbhakarna (Hinduism)
+L[edit]
+Legion (Christian demonology)
+Lechies (Slavic mythology)
+Leyak (Indonesian mythology)
+Lempo (Finnish mythology)
+Leraje/Leraie (Christian demonology)
+Leviathan (Jewish demonology, Christian demonology)
+Lili/Lilin/Lilim (Jewish demonology)
+Lilith (Sumerian mythology, Akkadian mythology, Jewish folklore)
+Lucifer (Christian demonology)
+Lucifuge Rofocale (Christian demonology)
+M[edit]
+Malphas (Christian demonology)
+Mammon (Christian demonology)
+Mara (Buddhist mythology)
+Maricha (Hindu mythology)
+Marax/Morax/Foraii (Christian demonology)
+Marchosias (Christian demonology)
+Masih ad-Dajjal/Ad-Dajjal/Dajjal (Islamic eschatology)
+Mastema (Jewish demonology)
+Mephistopheles (Christian folklore, German folklore)
+Merihem (Christian demonology)
+Moloch (Christian demonology)
+Murmur (Christian demonology)
+Morpheus (Greek mythology)
+N[edit]
+Naamah (Jewish demonology)
+Naberius/Cerbere/Naberus (Christian demonology)
+Ninurta (Sumerian mythology, Akkadian mythology)
+Namtar (Sumerian mythology)
+O[edit]
+Onoskelis (Testament of Solomon)
+Orcus (Roman mythology, later Christian demonology)
+Orias/Oriax (Christian demonology)
+Orobas (Christian demonology)
+Ose (Christian demonology)
+Ördög (Hungarian mythology)
+O Tokata (Indonesian mythology)
+P[edit]
+Paimon (Christian demonology)
+Pazuzu (Babylonian demonology)
+Pelesit (Indonesian and Malaysian mythology)
+Phenex (Christian demonology)
+Penemue (Jewish and Christian demonology)
+Pithius (Christian demonology)
+Pocong (Indonesian mythology)
+Pontianak (Indonesian and Malaysian mythology)
+Pruflas (Christian demonology)
+Puloman (Hindu demonology)
+R[edit]
+Rahab (Jewish folklore)
+Raum (Christian demonology)
+Ronove (Christian demonology)
+Rusalka (Slavic mythology)
+Rakshasa (Hinduism)
+Rangda (Hinduism in Indonesia)
+Ravan (Hinduism)
+S[edit]
+Sabnock (Christian demonology)
+Saleos (Christian demonology)
+Samael (Jewish demonology)
+Satan (or Shaytan) (Jewish demonology, Christian demonology, Islamic demonology)
+Seir (Christian demonology)
+Semyaz (Jewish demonology)
+Shax/Chax (Christian demonology)
+Shedim (Jewish folklore)
+Sitri (Christian demonology)
+Sthenno (Greek mythology)
+Stolas/Solas (Christian demonology)
+Suanggi (Indonesian mythology)
+Succubus (Sumerian mythology, Akkadian mythology, Jewish folklore, Christian demonology)
+Surgat (Christian demonology)
+
+Tannin (Jewish demonology)
+Toyol (Indonesian and Malaysian)
+Tuchulcha (Etruscan mythology)
+
+Ukobach (Christian demonology)
+
+Valac (Christian demonology)
+Valefar/Malaphar/Malephar (Christian demonology)
+Vanth (Etruscan mythology)
+Vapula (Christian demonology)
+Vassago (Christian demonology)
+Vepar (Christian demonology)
+Vine (Christian demonology)
+
+Wendigo (Algonquin)
+
+Xaphan (Christian demonology)
+Xezbeth (demonology)[clarification needed]
+
+Yeqon
+Yeter'el
+
+Zagan (Christian demonology)
+Zepar (Christian demonology)
+Ziminiar (Christian demonology)

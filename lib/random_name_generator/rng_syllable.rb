@@ -106,7 +106,7 @@ class RNGSyllable
   private
 
   def parse_args(args)
-    args = raw.to_s.strip.split(' ')
+    args = raw.to_s.strip.downcase.split(' ')
     parse_syllable(args[0])
     parse_flags(args[1..-1])
   end
@@ -154,4 +154,3 @@ class RNGSyllable
     (vlc || clv)
   end
 end
-

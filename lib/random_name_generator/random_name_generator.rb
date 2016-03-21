@@ -11,7 +11,7 @@ class RandomNameGenerator
 
   attr_reader :pre, :pre_syllables, :sur_syllables, :mid_syllables
 
-  def initialize(filename)
+  def initialize(filename = RandomNameGenerator::FANTASY)
     @file = File.new(filename)
     @pre_syllables = []
     @sur_syllables = []
@@ -20,7 +20,7 @@ class RandomNameGenerator
     refresh
   end
 
-  def compose(count)
+  def compose(count = pick_number_of_syllables)
     @pre = pre_syllables.sample
     return @pre.to_s.capitalize if count < 2
     name = determine_middle_syllables(count - 2, pre)
@@ -69,6 +69,11 @@ class RandomNameGenerator
     end
   end
 
+  def pick_number_of_syllables
+    distribution = [2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5]
+    distribution.sample
+  end
+
   def to_s
     "NameGenerator (#{@file.path})"
   end
@@ -81,3 +86,13 @@ puts n.compose(1)
 puts n.compose(2)
 puts n.compose(3)
 puts n.compose(4)
+puts n.compose
+puts
+
+f = RandomNameGenerator.new
+puts f.compose(0)
+puts f.compose(1)
+puts f.compose(2)
+puts f.compose(3)
+puts f.compose(4)
+puts f.compose
