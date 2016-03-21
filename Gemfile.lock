@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    random_name (0.0.1)
+    random_name_generator (0.0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -104,7 +104,7 @@ DEPENDENCIES
   mocha
   pry
   rake (~> 10.0)
-  random_name!
+  random_name_generator!
   reek
   rubocop
 

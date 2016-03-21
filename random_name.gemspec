@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'random_name/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'random_name'
-  spec.version       = RandomName::VERSION
+  spec.name          = 'random_name_generator'
+  spec.version       = '0.0.3'
   spec.authors       = ['folkengine']
   spec.email         = ['gaoler@electronicpanopticon.com']
+  spec.licenses      = ['GPL-3.0']
 
-  spec.summary       = 'TODO: Write a short summary, because Rubygems requires one.'
-  spec.description   = 'TODO: Write a longer description or delete this line.'
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = 'Random Name Generator'
+  spec.description   = 'Generates random names based upon a passed in collection of syllables.'
+  spec.homepage      = 'https://github.com/folkengine/random_name_generator'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
