@@ -1,6 +1,6 @@
 # FuzzyOctoTrain
 
-[![Build Status](https://travis-ci.org/folkengine/fuzzy_octo_train.svg?branch=master)](https://travis-ci.org/folkengine/fuzzy_octo_train)
+[![Build Status](https://travis-ci.org/folkengine/random_name_generator.svg?branch=master)](https://travis-ci.org/folkengine/random_name_generator)
 
 Ruby port of [java-random-name-generator](https://github.com/folkengine/java-random-name-generator).
 
