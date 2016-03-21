@@ -22,8 +22,8 @@
 class RNGSyllable
   attr_reader :raw, :syllable, :next_syllable_requirement, :previous_syllable_requirement
 
-  VOWELS = %w(i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ)
-  CONSONANTS = %w(b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z)
+  VOWELS = %w(i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ).freeze
+  CONSONANTS = %w(b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z).freeze
 
   def initialize(args)
     @raw = args
@@ -112,7 +112,7 @@ class RNGSyllable
   end
 
   def parse_syllable(syll)
-    fail ArgumentError 'Empty String is not allowed.' if syll.empty?
+    raise ArgumentError 'Empty String is not allowed.' if syll.empty?
 
     captures = /([+-]?)(.+)/.match(syll).captures
     parse_prefix(captures[0])

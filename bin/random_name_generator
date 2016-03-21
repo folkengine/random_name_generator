@@ -3,7 +3,7 @@
 require 'slop'
 require_relative '../lib/random_name_generator'
 
-lang =  RandomNameGenerator::FANTASY
+lang = RandomNameGenerator::FANTASY
 
 opts = Slop.parse do |o|
   o.bool '-e', '--elven', 'Use Elven eyllable file'
@@ -18,12 +18,10 @@ lang = RandomNameGenerator::GOBLIN if opts.goblin?
 lang = RandomNameGenerator::ROMAN if opts.roman?
 
 if opts.flipmode?
-  langs = [RandomNameGenerator::FANTASY, RandomNameGenerator::ELVEN, RandomNameGenerator::GOBLIN, RandomNameGenerator::ROMAN]
-  puts "#{RandomNameGenerator.new(langs.sample).compose} #{RandomNameGenerator.new(langs.sample).compose}"
+  puts "#{RandomNameGenerator.flip_mode.compose} #{RandomNameGenerator.flip_mode.compose}"
 elsif opts.help?
   puts opts
 else
   rndgen = RandomNameGenerator.new(lang)
   puts "#{rndgen.compose} #{rndgen.compose}"
 end
-

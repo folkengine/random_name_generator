@@ -1,7 +1,6 @@
 require_relative 'rng_syllable'
 
 class RandomNameGenerator
-
   dirname = File.dirname(__FILE__)
 
   ELVEN = File.new("#{dirname}/languages/elven.txt")
@@ -20,9 +19,18 @@ class RandomNameGenerator
     refresh
   end
 
-  def compose(count = pick_number_of_syllables)
+  def self.flip_mode
+    langs = [RandomNameGenerator::FANTASY,
+             RandomNameGenerator::ELVEN,
+             RandomNameGenerator::GOBLIN,
+             RandomNameGenerator::ROMAN]
+    new(langs.sample)
+  end
+
+  def compose(count = RandomNameGenerator.pick_number_of_syllables)
     @pre = pre_syllables.sample
     return @pre.to_s.capitalize if count < 2
+
     name = determine_middle_syllables(count - 2, pre)
     name << determine_last_syllable(name.last)
     name.map(&:to_s).join.capitalize
@@ -69,7 +77,7 @@ class RandomNameGenerator
     end
   end
 
-  def pick_number_of_syllables
+  def self.pick_number_of_syllables
     distribution = [2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5]
     distribution.sample
   end
@@ -78,4 +86,3 @@ class RandomNameGenerator
     "NameGenerator (#{@file.path})"
   end
 end
-

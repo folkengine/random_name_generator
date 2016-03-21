@@ -6,3 +6,9 @@ IrresponsibleModule:
 
 TooManyMethods:
     enabled: false
+
+TooManyStatements:
+  enabled: true
+  exclude:
+  - initialize
+  max_statements: 8
