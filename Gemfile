@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'pry'
+gem 'slop', '~> 4.2', '>= 4.2.1'
 
 group :development do
   gem 'minitest'

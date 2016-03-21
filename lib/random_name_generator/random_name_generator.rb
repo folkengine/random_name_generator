@@ -79,20 +79,3 @@ class RandomNameGenerator
   end
 end
 
-
-n = RandomNameGenerator.new(RandomNameGenerator::ELVEN)
-puts n.compose(0)
-puts n.compose(1)
-puts n.compose(2)
-puts n.compose(3)
-puts n.compose(4)
-puts n.compose
-puts
-
-f = RandomNameGenerator.new
-puts f.compose(0)
-puts f.compose(1)
-puts f.compose(2)
-puts f.compose(3)
-puts f.compose(4)
-puts f.compose
