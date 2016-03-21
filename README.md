@@ -26,7 +26,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fuzzy_octo_train'
+gem 'random_name_generator'
 ```
 
 And then execute:
@@ -35,7 +35,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install fuzzy_octo_train
+    $ gem install random_name_generator
 
 ## Usage
 
@@ -49,5 +49,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/folkengine/fuzzy_octo_train.
+Bug reports and pull requests are welcome on GitHub at https://github.com/folkengine/random_name_generator.
 
