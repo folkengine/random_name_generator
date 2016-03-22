@@ -7,3 +7,6 @@ require 'minitest/unit'
 require 'mocha/mini_test'
 
 Minitest::Reporters.use!
+
+require 'coveralls'
+Coveralls.wear!
