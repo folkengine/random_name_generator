@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/folkengine/random_name_generator.svg?branch=master)](https://travis-ci.org/folkengine/random_name_generator)
 [![Code Climate](https://codeclimate.com/github/folkengine/random_name_generator/badges/gpa.svg)](https://codeclimate.com/github/folkengine/random_name_generator)
 [![Dependency Status](https://gemnasium.com/folkengine/random_name_generator.svg)](https://gemnasium.com/folkengine/random_name_generator)
+[![Coverage Status](https://coveralls.io/repos/github/folkengine/random_name_generator/badge.svg?branch=master)](https://coveralls.io/github/folkengine/random_name_generator?branch=master)
 
 Ruby port of [java-random-name-generator](https://github.com/folkengine/java-random-name-generator).
 
