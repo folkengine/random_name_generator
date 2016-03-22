@@ -14,3 +14,5 @@ group :development do
   gem 'reek'
   gem 'rubocop'
 end
+
+gem 'codeclimate-test-reporter', group: :test, require: nil
