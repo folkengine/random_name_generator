@@ -1,6 +1,6 @@
 Metrics/AbcSize:
   Enabled: true
-  Max: 16
+  Max: 22
 
 Metrics/ClassLength:
   Description: 'Avoid classes longer than 100 lines of code.'

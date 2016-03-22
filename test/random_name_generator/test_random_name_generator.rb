@@ -4,7 +4,7 @@ require_relative '../test_helper'
 class TestRandomNameGenerator < Minitest::Test
   def test_compose
     fuzz = RandomNameGenerator.new(RandomNameGenerator::ELVEN)
-    fuzz.pre_syllables.stubs(:sample).returns(RNGSyllable.new('foo')).returns(RNGSyllable.new('bar'))
+    fuzz.pre_syllables.stubs(:sample).returns(RNGSyllable.new('-foo')).returns(RNGSyllable.new('-bar'))
     fuzz.compose(3)
 
     assert_equal('foo', fuzz.pre.to_s)
@@ -14,9 +14,11 @@ class TestRandomNameGenerator < Minitest::Test
 
   def test_determine_next_syllable
     fuzz = RandomNameGenerator.new(RandomNameGenerator::ELVEN)
-    fuzz.mid_syllables.stubs(:sample).returns(RNGSyllable.new('oh')).returns(RNGSyllable.new('bar'))
-    next_syllable = fuzz.determine_next_syllable(RNGSyllable.new('foo +c'), fuzz.mid_syllables)
-    assert_equal('bar', next_syllable.to_s)
+    fuzz.pre_syllables.stubs(:sample).returns(RNGSyllable.new('-foo')).returns(RNGSyllable.new('-baz'))
+    fuzz.mid_syllables.stubs(:sample).returns(RNGSyllable.new('oh -c')).returns(RNGSyllable.new('bar -v')).returns(RNGSyllable.new('waz'))
+    fuzz.sur_syllables.stubs(:sample).returns(RNGSyllable.new('+yaz'))
+
+    assert_equal('Foobaryaz', fuzz.compose(3))
   end
 
   def test_default_lang

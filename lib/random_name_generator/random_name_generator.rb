@@ -49,6 +49,16 @@ class RandomNameGenerator
     name.map(&:to_s).join.capitalize
   end
 
+  def self.pick_number_of_syllables
+    [2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5].sample
+  end
+
+  def to_s
+    "NameGenerator (#{@file.path})"
+  end
+
+  private
+
   def determine_middle_syllables(count, pre)
     determine_next_syllables(count, pre, @mid_syllables)
   end
@@ -88,13 +98,5 @@ class RandomNameGenerator
         @mid_syllables.push(syllable)
       end
     end
-  end
-
-  def self.pick_number_of_syllables
-    [2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5].sample
-  end
-
-  def to_s
-    "NameGenerator (#{@file.path})"
   end
 end
