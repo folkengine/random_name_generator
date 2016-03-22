@@ -1,5 +1,17 @@
 require_relative 'rng_syllable'
 
+# RandomNameGenerator:
+#
+# Examples
+#
+#   rng = RandomNameGenerator.new(RandomNameGenerator::GOBLIN)
+#   puts rng.compose(3)
+#
+# By default RandomNameGenerator uses the Fantasy syllable file and creates a name with between 2 and 5 syllables.
+#
+#   rng = RandomNameGenerator.new
+#   puts rng.compose
+#
 class RandomNameGenerator
   dirname = File.dirname(__FILE__)
 
@@ -19,6 +31,7 @@ class RandomNameGenerator
     refresh
   end
 
+  # Public: Static factory method that instantiates a RandomNameGenerator in a random language.
   def self.flip_mode
     langs = [RandomNameGenerator::FANTASY,
              RandomNameGenerator::ELVEN,

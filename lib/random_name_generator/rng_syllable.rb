@@ -1,3 +1,18 @@
+# RNGSyllable: Class for managing properties of individual syllables with in language name file. Each line within a file
+# translates into a syllable object. The reason behind this class is to take over most of the complexity of parsing each
+# syllable, greatly simplifying the work done by RandomNameGenerator. This code is not meant to be called directly as a
+# part of standard usage.
+#
+# Examples
+#
+#   syllable = RNGSyllable.new('-foo +c')
+#
+# This creates a foo syllable object that needs to be the first syllable and followed by a constant.
+#
+# For testing purposes, passing in another RNGSyllable object will create a clone:
+#
+#   syllable_clone = RNGSyllable.new(syllable)
+#
 # SYLLABLE CLASSIFICATION:
 # Name is usually composed from 3 different class of syllables, which include prefix, middle part and suffix.
 # To declare syllable as a prefix in the file, insert "-" as a first character of the line.
@@ -18,7 +33,6 @@
 # 2) +c means that next syllable must definitely start with a consonant.
 # 3) -v means that this syllable can only be added to another syllable, that ends with a vocal.
 # 4) -c means that this syllable can only be added to another syllable, that ends with a consonant.
-
 class RNGSyllable
   attr_reader :raw, :syllable, :next_syllable_requirement, :previous_syllable_requirement
 
