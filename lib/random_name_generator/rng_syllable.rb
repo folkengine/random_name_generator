@@ -36,8 +36,8 @@
 class RNGSyllable
   attr_reader :raw, :syllable, :next_syllable_requirement, :previous_syllable_requirement
 
-  VOWELS = %w(i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ).freeze
-  CONSONANTS = %w(b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z).freeze
+  VOWELS ||= %w(i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ).freeze
+  CONSONANTS ||= %w(b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z).freeze
 
   def initialize(args)
     @raw = args

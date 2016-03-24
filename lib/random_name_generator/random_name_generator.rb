@@ -22,8 +22,9 @@ class RandomNameGenerator
 
   attr_reader :pre, :pre_syllables, :sur_syllables, :mid_syllables
 
-  def initialize(filename = RandomNameGenerator::FANTASY)
+  def initialize(filename = RandomNameGenerator::FANTASY, random: Random.new)
     @file = File.new(filename)
+    @rnd = random
     @pre_syllables = []
     @sur_syllables = []
     @mid_syllables = []
@@ -81,7 +82,7 @@ class RandomNameGenerator
   def determine_next_syllable(this_syllable, sampler)
     next_syllable = ''
     loop do
-      next_syllable = sampler.sample
+      next_syllable = sampler.sample(random: @rnd)
       break unless this_syllable.incompatible?(next_syllable)
     end
     next_syllable
