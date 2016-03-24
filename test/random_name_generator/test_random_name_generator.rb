@@ -21,6 +21,13 @@ class TestRandomNameGenerator < Minitest::Test
     assert_equal('Foobaryaz', fuzz.compose(3))
   end
 
+  def test_seeded
+    fuzz1 = RandomNameGenerator.new(RandomNameGenerator::ELVEN, random: Random.new(15))
+    fuzz2 = RandomNameGenerator.new(RandomNameGenerator::ELVEN, random: Random.new(15))
+
+    assert_equal(fuzz1.compose(3), fuzz2.compose(3))
+  end
+
   def test_default_lang
     fuzz = RandomNameGenerator.new
     refute_empty fuzz.compose
