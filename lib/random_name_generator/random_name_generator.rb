@@ -55,7 +55,7 @@ class RandomNameGenerator
   end
 
   def to_s
-    "NameGenerator (#{@file.path})"
+    "RandomNameGenerator (#{@file.path})"
   end
 
   private
