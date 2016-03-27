@@ -16,3 +16,11 @@ Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/test*.rb']
   t.verbose = true
 end
+
+task :boom do
+  Rake::Task['test'].execute
+  puts 'Running Reek...'
+  Rake::Task['reek'].execute
+  puts
+  Rake::Task['rubocop'].execute
+end
