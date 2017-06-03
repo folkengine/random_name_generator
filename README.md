@@ -7,7 +7,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/folkengine/random_name_generator/badge.svg?branch=master)](https://coveralls.io/github/folkengine/random_name_generator?branch=master)
 [![Inline docs](http://inch-ci.org/github/folkengine/random_name_generator.svg?branch=master)](http://inch-ci.org/github/folkengine/random_name_generator)
 
-Ruby port of [java-random-name-generator](https://github.com/folkengine/java-random-name-generator).
+Ruby port of [java-random-name-generator](https://github.com/folkengine/java-random-name-generator), which in turn is a gradle enabled version of [Sinipull's GPL'd post on codecall.net](http://forum.codecall.net/topic/49665-java-random-name-generator/).
 
 The big difference between this random name generator and others is that it allows you to create names in various
 custom styles such as Elven, and Roman. If you're looking for a quick name for a Goblin NPC, RandomNameGenerator is
