@@ -2,6 +2,9 @@ Metrics/AbcSize:
   Enabled: true
   Max: 22
 
+Metrics/BlockLength:
+  Max: 30
+
 Metrics/ClassLength:
   Description: 'Avoid classes longer than 100 lines of code.'
   Enabled: false
@@ -10,6 +13,9 @@ Metrics/LineLength:
   Description: 'Limit lines to 80 characters.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 12
 
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
