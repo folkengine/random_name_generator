@@ -33,14 +33,18 @@
 # 2) +c means that next syllable must definitely start with a consonant.
 # 3) -v means that this syllable can only be added to another syllable, that ends with a vocal.
 # 4) -c means that this syllable can only be added to another syllable, that ends with a consonant.
+#
+# :reek:TooManyMethods
+# :reek:TooManyInstanceVariables
 class RNGSyllable
   attr_reader :raw, :syllable, :next_syllable_requirement, :previous_syllable_requirement
 
-  VOWELS ||= %w(i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ).freeze
-  CONSONANTS ||= %w(b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z).freeze
+  VOWELS ||= %w[i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ].freeze
+  CONSONANTS ||= %w[b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z].freeze
 
   def initialize(args)
     @raw = args
+    @syllable = ''
     @is_prefix = false
     @is_suffix = false
     @next_syllable_requirement = :letter
@@ -119,8 +123,9 @@ class RNGSyllable
 
   private
 
+  # :reek:FeatureEnvy
   def parse_args(args)
-    args = raw.to_s.strip.downcase.split(' ')
+    args = args.to_s.strip.downcase.split(' ')
     parse_syllable(args[0])
     parse_flags(args[1..-1])
   end

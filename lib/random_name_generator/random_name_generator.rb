@@ -12,6 +12,8 @@ require_relative 'rng_syllable'
 #   rng = RandomNameGenerator.new
 #   puts rng.compose
 #
+# :reek:TooManyInstanceVariables
+# :reek:TooManyStatements
 class RandomNameGenerator
   dirname = File.dirname(__FILE__)
 
@@ -23,6 +25,7 @@ class RandomNameGenerator
   attr_reader :pre, :pre_syllables, :sur_syllables, :mid_syllables
 
   def initialize(filename = RandomNameGenerator::FANTASY, random: Random.new)
+    @pre = nil
     @file = File.new(filename)
     @rnd = random
     @pre_syllables = []
@@ -71,6 +74,7 @@ class RandomNameGenerator
   def determine_next_syllables(count, pre, syllables)
     name = Array(pre)
     return name if count < 1
+
     next_syllable = pre
     count.times do
       next_syllable = determine_next_syllable(next_syllable, syllables)
