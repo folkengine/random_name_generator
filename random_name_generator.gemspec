@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'random_name_generator'
-  spec.version       = '1.2.0'
+  spec.version       = '1.2.1'
   spec.authors       = ['folkengine']
   spec.email         = ['gaoler@electronicpanopticon.com']
   spec.licenses      = ['GPL-3.0']
