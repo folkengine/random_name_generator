@@ -1,4 +1,6 @@
 dist: trusty
+before_install:
+ - gem install bundler:2.1.2
 language: ruby
 rvm:
  - "2.3.1"
