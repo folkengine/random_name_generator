@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'random_name_generator'
-  spec.version       = '1.2.0'
+  spec.version       = '1.2.1'
   spec.authors       = ['folkengine']
   spec.email         = ['gaoler@electronicpanopticon.com']
   spec.licenses      = ['GPL-3.0']
@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 2.2'
+  spec.required_ruby_version = '>= 2.5'
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
 end
