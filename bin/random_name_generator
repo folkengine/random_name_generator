@@ -10,15 +10,27 @@ opts = Slop.parse do |o|
   o.bool '-g', '--goblin', 'Use Goblin eyllable file'
   o.bool '-r', '--roman', 'Use Roman eyllable file'
   o.bool '-f', '--flipmode', 'Flip mode in effect'
+  o.bool '-c', '--cyrillic', 'Use Cyrillic mode'
   o.bool '-?', '--help', 'How to'
 end
 
-lang = RandomNameGenerator::ELVEN if opts.elven?
-lang = RandomNameGenerator::GOBLIN if opts.goblin?
-lang = RandomNameGenerator::ROMAN if opts.roman?
+if opts.cyrillic?
+  lang = RandomNameGenerator::FANTASY_RU
+  lang = RandomNameGenerator::ELVEN_RU if opts.elven?
+  lang = RandomNameGenerator::GOBLIN_RU if opts.goblin?
+  lang = RandomNameGenerator::ROMAN_RU if opts.roman?
+else
+  lang = RandomNameGenerator::ELVEN if opts.elven?
+  lang = RandomNameGenerator::GOBLIN if opts.goblin?
+  lang = RandomNameGenerator::ROMAN if opts.roman?
+end
 
 if opts.flipmode?
-  puts "#{RandomNameGenerator.flip_mode.compose} #{RandomNameGenerator.flip_mode.compose}"
+  if opts.cyrillic?
+    puts "#{RandomNameGenerator.flip_mode_cyrillic.compose} #{RandomNameGenerator.flip_mode_cyrillic.compose}"
+  else
+    puts "#{RandomNameGenerator.flip_mode.compose} #{RandomNameGenerator.flip_mode.compose}"
+  end
 elsif opts.help?
   puts opts
 else

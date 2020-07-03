@@ -22,6 +22,11 @@ class RandomNameGenerator
   GOBLIN = File.new("#{dirname}/languages/goblin.txt")
   ROMAN = File.new("#{dirname}/languages/roman.txt")
 
+  ELVEN_RU = File.new("#{dirname}/languages/elven-ru.txt")
+  FANTASY_RU = File.new("#{dirname}/languages/fantasy-ru.txt")
+  GOBLIN_RU = File.new("#{dirname}/languages/goblin-ru.txt")
+  ROMAN_RU = File.new("#{dirname}/languages/roman-ru.txt")
+
   attr_reader :pre, :pre_syllables, :sur_syllables, :mid_syllables
 
   def initialize(filename = RandomNameGenerator::FANTASY, random: Random.new)
@@ -41,6 +46,14 @@ class RandomNameGenerator
              RandomNameGenerator::ELVEN,
              RandomNameGenerator::GOBLIN,
              RandomNameGenerator::ROMAN]
+    new(langs.sample)
+  end
+
+  def self.flip_mode_cyrillic
+    langs = [RandomNameGenerator::FANTASY_RU,
+             RandomNameGenerator::ELVEN_RU,
+             RandomNameGenerator::GOBLIN_RU,
+             RandomNameGenerator::ROMAN_RU]
     new(langs.sample)
   end
 

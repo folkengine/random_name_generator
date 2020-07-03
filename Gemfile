@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'pry', '~> 0.10.3'
-# gem 'slop', '~> 4.2', '>= 4.2.1'
+gem 'pry'
+gem 'slop', '~> 4.2'
 
 group :development do
   gem 'guard'
