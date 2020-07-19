@@ -1,3 +1,4 @@
+-a +c
 -æ +c
 -aa +c
 -ab
@@ -20,6 +21,8 @@
 -ang
 -anti
 -ap
+-ar
+-as
 -hab
 -mai
 -mal
@@ -40,6 +43,7 @@ ia -c +c
 it -c -v
 loc +v
 ma +c
+mo -c +c
 oc
 olly -c +v
 or
@@ -47,12 +51,20 @@ ra +c
 rat
 rax +v
 real
+roma -c +c
 sh
 thi +c
+una -c +c
 
 +al
++akku -c
 +as
++b'el -c
 +bou -v
++chon
++christ -v
++dai
++deus
 +er -c
 +es -c
 +ias -c
@@ -60,34 +72,30 @@ thi +c
 +ka
 +lat
 +lech
++lius
 +ma
 +man
 +mon
 +nah
 +nyu
 +on -c
++phus -c
 +rept -v
 +res
++ros
 +s -v
++sag
++sakku -v
++sura
 +van
 +xas -v
 +y -c
 +ym
 +zou
++xu
 
 # https://en.wikipedia.org/wiki/The_infernal_names
 
-Andrealphus (Christian demonology)
-Andromalius (Christian demonology)
-Antichrist (Christian demonology)
-Anzu (Sumerian mythology)
-Armaros (Jewish demonology)
-Archon (Gnosticism)
-Arunasura [Hindu mythology]
-Asag (Sumerian demonology)
-Asakku (Babylonian mythology)
-Asb'el (Jewish mythology)
-Asmodai/Asmodeus (Jewish folklore and Christian demonology)
 Astaroth (Christian demonology)
 Asura (Hindu mythology)
 Azazel / Azaz'el (Jewish demonology)

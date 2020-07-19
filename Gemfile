@@ -4,6 +4,7 @@ gemspec
 
 gem 'pry'
 gem 'slop', '~> 4.2'
+gem "rest-client", ">= 1.8.0"
 
 group :development do
   gem 'guard'
@@ -15,5 +16,5 @@ group :development do
   gem 'rubocop'
 end
 
-gem 'coveralls', require: false
+gem 'coveralls', ">= 0.8.23", require: false
 gem 'simplecov', require: false, group: :test
