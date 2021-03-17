@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    random_name_generator (1.2.1)
+    random_name_generator (1.2.2)
 
 GEM
   remote: https://rubygems.org/
