@@ -29,9 +29,9 @@
 # syllable and SEPARATE WITH WHITESPACE. (example: "aad +v -c"). The order of rules is not important.
 #
 # RULES:
-# 1) +v means that next syllable must definitely start with a vocal.
+# 1) +v means that next syllable must definitely start with a vowel.
 # 2) +c means that next syllable must definitely start with a consonant.
-# 3) -v means that this syllable can only be added to another syllable, that ends with a vocal.
+# 3) -v means that this syllable can only be added to another syllable, that ends with a vowel.
 # 4) -c means that this syllable can only be added to another syllable, that ends with a consonant.
 #
 # :reek:TooManyMethods
