@@ -11,6 +11,9 @@ Ruby port of
 which in turn is a gradle enabled version of
 [Sinipull's GPL'd post on codecall.net](http://forum.codecall.net/topic/49665-java-random-name-generator/).
 
+**For other languages see
+[RandomNameGeneratorHub](https://github.com/folkengine/RandomNameGeneratorHub)**.
+
 The big difference between this random name generator and others is that
 it allows you to create names in various custom styles such as Elven,
 and Roman. If you're looking for a quick name for a Goblin NPC,
