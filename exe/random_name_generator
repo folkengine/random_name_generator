@@ -1,17 +1,20 @@
 #!/usr/bin/env ruby
 
-require 'slop'
-require_relative '../lib/random_name_generator'
+# frozen_string_literal: true
+
+require "random_name_generator"
+require "slop"
 
 lang = RandomNameGenerator::FANTASY
 
 opts = Slop.parse do |o|
-  o.bool '-e', '--elven', 'Use Elven eyllable file'
-  o.bool '-g', '--goblin', 'Use Goblin eyllable file'
-  o.bool '-r', '--roman', 'Use Roman eyllable file'
-  o.bool '-f', '--flipmode', 'Flip mode in effect'
-  o.bool '-c', '--cyrillic', 'Use Cyrillic mode'
-  o.bool '-?', '--help', 'How to'
+  o.bool "-e", "--elven", "Use Elven eyllable file"
+  o.bool "-g", "--goblin", "Use Goblin eyllable file"
+  o.bool "-r", "--roman", "Use Roman eyllable file"
+  o.bool "-f", "--flipmode", "Flip mode in effect"
+  o.bool "-c", "--cyrillic", "Use Cyrillic mode"
+  o.bool "-x", "--xrated", "Generate Curse words [NEEDS WORK]"
+  o.bool "-?", "--help", "How to"
 end
 
 if opts.cyrillic?
@@ -23,6 +26,7 @@ else
   lang = RandomNameGenerator::ELVEN if opts.elven?
   lang = RandomNameGenerator::GOBLIN if opts.goblin?
   lang = RandomNameGenerator::ROMAN if opts.roman?
+  lang = RandomNameGenerator::CURSE if opts.xrated?
 end
 
 if opts.flipmode?

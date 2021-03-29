@@ -1,20 +1,19 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
+source "https://rubygems.org"
+
+# Specify your gem's dependencies in random_name_generator.gemspec
 gemspec
 
-gem 'pry'
-gem 'rest-client', '>= 1.8.0'
-gem 'slop', '~> 4.2'
+gem "pry"
+gem "rake", "~> 13.0"
+gem "slop", "~> 4.2"
 
 group :development do
-  gem 'guard'
-  gem 'guard-minitest'
-  gem 'minitest'
-  gem 'minitest-reporters'
-  gem 'mocha'
-  gem 'reek'
-  gem 'rubocop'
+  gem "coveralls", require: false
+  gem "reek"
+  gem "rspec", "~> 3.0"
+  gem "rubocop"
+  gem "rubocop-rake", require: false
+  gem "rubocop-rspec", require: false
 end
-
-gem 'coveralls', '>= 0.8.23', require: false
-gem 'simplecov', require: false, group: :test

@@ -1,0 +1,29 @@
+-a
+-b
+-c +c
+-e +c
+-f +v
+-i +v
+a
+b
+c -v
+d -v
+e -c
+f -c
+g +c
+i +c
+j +v
+o +v
+p -v +v
+ø -v +v
+q -v +c
+æ -c +v
+r -c +v
+ə -c +v
+s -c +c
++a
++b
++c -c
++e -c
++f -v
++i -v
