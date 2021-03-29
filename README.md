@@ -40,11 +40,11 @@ Or install it yourself as:
 ## Usage
 
 RandomNameGenerator comes with several styles of syllable files:
-[Elven](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/languages/elven.txt),
-[Fantasy](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/languages/fantasy.txt),
-[Goblin](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/languages/goblin.txt),
+[Elven](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/elven.txt),
+[Fantasy](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/fantasy.txt),
+[Goblin](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/goblin.txt),
 and
-[Roman](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/languages/roman.txt).
+[Roman](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/roman.txt).
 By default it uses Fantasy. Instantiate RandomNameGenerator and then
 call compose on the object to generate a random name. If you don't pass
 in the number of syllables you want for your name to compose, it will
@@ -101,9 +101,9 @@ goals to improve my Ruby craft:
 
 * Code confidently in the spirit of Advi Grimm's
   [Confident Ruby](http://www.confidentruby.com/).
-* Use
+* ~~Use
   [Travis-CI](https://travis-ci.org/folkengine/random_name_generator)
-  for build validation.
+  for build validation.~~ Moved to GitHub Actions.
 * Use [Rubocop](https://github.com/bbatsov/rubocop) and
   [Reek](https://github.com/troessner/reek) for code quality.
 * Deploy it to
