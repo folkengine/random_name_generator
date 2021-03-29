@@ -36,4 +36,5 @@ build/
 .rvmrc
 
 /.idea/
-test/random_name_generator/coverage/
+
+.rspec_status
