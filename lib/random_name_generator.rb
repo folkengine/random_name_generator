@@ -98,6 +98,14 @@ module RandomNameGenerator
       "RandomNameGenerator::Generator (#{@language.path.split("/")[-1]})"
     end
 
+    def tenet
+      @pre_syllables + @mid_syllables + @sur_syllables.join("\n")
+    end
+
+    def syllables
+      (@pre_syllables << @mid_syllables << @sur_syllables).flatten!.map(&:raw)
+    end
+
     private
 
     def determine_middle_syllables(count, pre)

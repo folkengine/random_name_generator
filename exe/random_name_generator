@@ -2,6 +2,7 @@
 
 # frozen_string_literal: true
 
+require 'json'
 require "random_name_generator"
 require "slop"
 
@@ -13,6 +14,7 @@ opts = Slop.parse do |o|
   o.bool "-r", "--roman", "Use Roman eyllable file"
   o.bool "-f", "--flipmode", "Flip mode in effect"
   o.bool "-c", "--cyrillic", "Use Cyrillic mode"
+  o.bool "-j", "--json", "dumps out a language object as JSON"
   o.bool "-x", "--xrated", "Generate Curse words [NEEDS WORK]"
   o.bool "-?", "--help", "How to"
 end
@@ -29,7 +31,10 @@ else
   lang = RandomNameGenerator::CURSE if opts.xrated?
 end
 
-if opts.flipmode?
+if opts.json?
+  rndgen = RandomNameGenerator.new(lang)
+  puts rndgen.syllables
+elsif opts.flipmode?
   if opts.cyrillic?
     puts "#{RandomNameGenerator.flip_mode_cyrillic.compose} #{RandomNameGenerator.flip_mode_cyrillic.compose}"
   else

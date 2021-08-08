@@ -124,6 +124,10 @@ module RandomNameGenerator
       @syllable
     end
 
+    def as_json
+      "{\"syllable\"=\"#{@syllable}\", \"previous\"=\"#{@previous_syllable_requirement}\", \"next\"=\"#{@next_syllable_requirement}\"}"
+    end
+
     private
 
     # :reek:FeatureEnvy

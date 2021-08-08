@@ -191,4 +191,10 @@ RSpec.describe RandomNameGenerator::Syllable do
       end
     end
   end
+
+  context "as_json" do
+    it "should return a single JSON entity for the syllable" do
+      expect(RandomNameGenerator::Syllable.new(" a -c +v \n").as_json).to eq("{\"syllable\"=\"a\"}")
+    end
+  end
 end
