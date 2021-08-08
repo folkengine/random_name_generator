@@ -129,18 +129,9 @@ call `$❯ rake reek`
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/folkengine/random_name_generator. This project is
-intended to be a safe, welcoming space for collaboration, and
-contributors are expected to adhere to the
-[code of conduct](https://github.com/folkengine/random_name_generator/blob/main/CODE_OF_CONDUCT.md).
+https://github.com/folkengine/random_name_generator.
 
 ## License
 
 The gem is available as open source under the terms of the
 [GNU Lesser General Public License version 3](https://opensource.org/licenses/LGPL-3.0).
-
-## Code of Conduct
-
-Everyone interacting in the RandomNameGenerator project's codebases,
-issue trackers, chat rooms and mailing lists is expected to follow the
-[code of conduct](https://github.com/[USERNAME]/random_name_generator/blob/main/CODE_OF_CONDUCT.md).
