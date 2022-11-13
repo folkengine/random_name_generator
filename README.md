@@ -82,7 +82,7 @@ over most of the complexity of parsing each syllable, greatly simplifying the Ra
 Part of the reason for working on this gem was to work on the following goals to improve my Ruby craft:
 
 * Code confidently in the spirit of Advi Grimm's [Confident Ruby](http://www.confidentruby.com/).
-* Use [Travis-CI](https://travis-ci.org/folkengine/random_name_generator) for build validation.
+* Use [Github Actions](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-ruby for build validation.
 * Use [Rubocop](https://github.com/bbatsov/rubocop) and [Reek](https://github.com/troessner/reek) for code quality. 
 * Deploy it to [RubyGems.org](https://rubygems.org/gems/random_name_generator).
 
