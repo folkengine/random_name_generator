@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require "coveralls"
-Coveralls.wear!
-
 require "random_name_generator"
 
 RSpec.configure do |config|

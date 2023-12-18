@@ -61,7 +61,7 @@ module RandomNameGenerator
     end
 
     def incompatible?(next_syllable)
-      (next_incompatible?(next_syllable) || previous_incompatible?(next_syllable))
+      next_incompatible?(next_syllable) || previous_incompatible?(next_syllable)
     end
 
     def compatible?(next_syllable)
@@ -130,7 +130,7 @@ module RandomNameGenerator
     def parse_args(args)
       args = args.to_s.strip.downcase.split
       parse_syllable(args[0])
-      parse_flags(args[1..-1])
+      parse_flags(args[1..])
     end
 
     def parse_syllable(syll)
@@ -165,17 +165,17 @@ module RandomNameGenerator
     end
 
     def next_incompatible?(next_syllable)
-      vnc = (next_syllable_must_start_with_vowel? && next_syllable.consonant_first?)
-      cnv = (next_syllable_must_start_with_consonant? && next_syllable.vowel_first?)
+      vnc = next_syllable_must_start_with_vowel? && next_syllable.consonant_first?
+      cnv = next_syllable_must_start_with_consonant? && next_syllable.vowel_first?
 
-      (vnc || cnv)
+      vnc || cnv
     end
 
     def previous_incompatible?(next_syllable)
-      vlc = (vowel_last? && next_syllable.previous_syllable_must_end_with_consonant?)
-      clv = (consonant_last? && next_syllable.previous_syllable_must_end_with_vowel?)
+      vlc = vowel_last? && next_syllable.previous_syllable_must_end_with_consonant?
+      clv = consonant_last? && next_syllable.previous_syllable_must_end_with_vowel?
 
-      (vlc || clv)
+      vlc || clv
     end
   end
 end
