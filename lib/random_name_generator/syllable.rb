@@ -130,7 +130,7 @@ module RandomNameGenerator
     def parse_args(args)
       args = args.to_s.strip.downcase.split
       parse_syllable(args[0])
-      parse_flags(args[1..-1])
+      parse_flags(args[1..])
     end
 
     def parse_syllable(syll)
