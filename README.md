@@ -3,7 +3,6 @@
 [![Gem Version](https://badge.fury.io/rb/random_name_generator.svg)](https://badge.fury.io/rb/random_name_generator)
 [![Build and Test](https://github.com/folkengine/random_name_generator/actions/workflows/ruby.yml/badge.svg)](https://github.com/folkengine/random_name_generator/actions/workflows/ruby.yml)
 [![Code Climate](https://codeclimate.com/github/folkengine/random_name_generator/badges/gpa.svg)](https://codeclimate.com/github/folkengine/random_name_generator)
-[![Coverage Status](https://coveralls.io/repos/github/folkengine/random_name_generator/badge.svg?branch=master)](https://coveralls.io/github/folkengine/random_name_generator?branch=master)
 [![Inline docs](http://inch-ci.org/github/folkengine/random_name_generator.svg?branch=master)](http://inch-ci.org/github/folkengine/random_name_generator)
 
 Ruby port of
