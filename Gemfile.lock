@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    random_name_generator (2.1.1)
+    random_name_generator (3.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -94,6 +94,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
