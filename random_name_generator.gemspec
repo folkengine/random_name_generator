@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Generates random names based upon custom collections of syllables. Styles include Elvish, Fantasy, Goblin, and Roman."
   spec.homepage      = "https://github.com/folkengine/random_name_generator"
   spec.license       = "LGPL-3.0"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 3.0.0")
   spec.metadata = { "rubygems_mfa_required" => "true" }
 
   spec.metadata["homepage_uri"] = spec.homepage
