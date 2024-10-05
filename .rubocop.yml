@@ -1,6 +1,10 @@
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.0
   NewCops: enable
+
+require:
+  - rubocop-rspec
+  - rubocop-rake
 
 Layout/LineLength:
   Max: 180
@@ -15,6 +19,18 @@ Metrics/ClassLength:
 
 Metrics/MethodLength:
   Max: 11
+
+RSpec/BeforeAfterAll:
+  Enabled: false
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
 
 Style/StringLiterals:
   Enabled: true
