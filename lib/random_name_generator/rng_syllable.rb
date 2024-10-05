@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # RNGSyllable: Class for managing properties of individual syllables with in language name file. Each line within a file
 # translates into a syllable object. The reason behind this class is to take over most of the complexity of parsing each
 # syllable, greatly simplifying the work done by RandomNameGenerator. This code is not meant to be called directly as a
@@ -58,7 +60,7 @@ class RNGSyllable
   end
 
   def incompatible?(next_syllable)
-    (next_incompatible?(next_syllable) || previous_incompatible?(next_syllable))
+    next_incompatible?(next_syllable) || previous_incompatible?(next_syllable)
   end
 
   def compatible?(next_syllable)
@@ -160,16 +162,16 @@ class RNGSyllable
   end
 
   def next_incompatible?(next_syllable)
-    vnc = (next_syllable_must_start_with_vowel? && next_syllable.consonant_first?)
-    cnv = (next_syllable_must_start_with_consonant? && next_syllable.vowel_first?)
+    vnc = next_syllable_must_start_with_vowel? && next_syllable.consonant_first?
+    cnv = next_syllable_must_start_with_consonant? && next_syllable.vowel_first?
 
-    (vnc || cnv)
+    vnc || cnv
   end
 
   def previous_incompatible?(next_syllable)
-    vlc = (vowel_last? && next_syllable.previous_syllable_must_end_with_consonant?)
-    clv = (consonant_last? && next_syllable.previous_syllable_must_end_with_vowel?)
+    vlc = vowel_last? && next_syllable.previous_syllable_must_end_with_consonant?
+    clv = consonant_last? && next_syllable.previous_syllable_must_end_with_vowel?
 
-    (vlc || clv)
+    vlc || clv
   end
 end

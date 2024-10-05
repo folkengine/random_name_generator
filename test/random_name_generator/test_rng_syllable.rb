@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'random_name_generator/rng_syllable'
 require_relative '../test_helper'
 
