@@ -50,7 +50,7 @@ GEM
       method_source (~> 1.0)
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (13.1.0)
+    rake (13.4.2)
     reek (6.3.0)
       dry-schema (~> 1.13.0)
       parser (~> 3.3.0)
@@ -95,11 +95,12 @@ GEM
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-24
+  arm64-darwin-25
   x86_64-linux
 
 DEPENDENCIES
   pry
-  rake (~> 13.1.0)
+  rake (~> 13.4)
   random_name_generator!
   reek
   rspec (~> 3.12.0)
@@ -109,4 +110,4 @@ DEPENDENCIES
   slop (~> 4.10.1)
 
 BUNDLED WITH
-   2.2.29
+  4.0.16

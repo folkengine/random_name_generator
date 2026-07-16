@@ -6,7 +6,7 @@ source "https://rubygems.org"
 gemspec
 
 gem "pry"
-gem "rake", "~> 13.1.0"
+gem "rake", "~> 13.4"
 gem "slop", "~> 4.10.1"
 
 group :development do

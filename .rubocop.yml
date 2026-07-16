@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.4
   NewCops: enable
 
 require:
@@ -31,6 +31,9 @@ RSpec/MultipleExpectations:
 
 RSpec/NestedGroups:
   Max: 5
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
 
 Style/StringLiterals:
   Enabled: true
