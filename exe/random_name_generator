@@ -14,6 +14,7 @@ opts = Slop.parse do |o|
   o.bool "-f", "--flipmode", "Flip mode in effect"
   o.bool "-c", "--cyrillic", "Use Cyrillic mode"
   o.bool "-x", "--xrated", "Generate Curse words [NEEDS WORK]"
+  o.bool "-ß", "--german-curse", "Generate German Curse words [NEEDS WORK]"
   o.bool "-?", "--help", "How to"
 end
 
@@ -27,6 +28,7 @@ else
   lang = RandomNameGenerator::GOBLIN if opts.goblin?
   lang = RandomNameGenerator::ROMAN if opts.roman?
   lang = RandomNameGenerator::CURSE if opts.xrated?
+  lang = RandomNameGenerator::GERMAN_CURSE if opts.german_curse?
 end
 
 if opts.flipmode?

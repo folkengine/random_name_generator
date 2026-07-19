@@ -1,12 +1,13 @@
 ---
 name: lang-gen
-description: Generate a new random_name_generator language from a free-text theme (e.g. "german curse words") — assembles flagged pre/mid/sur syllable collections, registers the File constant, adds a smoke spec and README entry, and samples names to verify. Use when the user types /lang-gen or asks to create, generate, or add a new language, dialect, or syllable file for the name generator.
+description: Generate a new random_name_generator language from a free-text theme (e.g. "german curse words") — assembles flagged pre/mid/sur syllable collections, registers the File constant, adds a smoke spec and README entry, and samples names to verify. Use when asked to create, generate, or add a new language, dialect, or syllable file for the name generator.
 ---
 
 # lang-gen
 
 Turn a free-text theme into a fully integrated `random_name_generator`
-language file. Invoked as `/lang-gen <theme>`, e.g. `/lang-gen german curse words`.
+language file. This workflow is written to be model-agnostic: any assistant
+that can edit files and run commands can follow it.
 
 ## The language-file DSL
 
@@ -125,7 +126,8 @@ flags) and re-sample before finishing.
 
 ### 7. Hand off the commit
 
-Git is manual. Do NOT run git yourself. Surface the exact command for the user:
+Git is manual in this workflow. Do NOT run git yourself. Surface the exact
+command for the user:
 
 ```bash
 git add lib/languages README.md lib/random_name_generator.rb spec/random_name_generator_spec.rb && git commit -m "Add <Theme> language via /lang-gen"
