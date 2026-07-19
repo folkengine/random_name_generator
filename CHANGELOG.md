@@ -1,3 +1,12 @@
+## Version 4
+
+## 4.0.0 - 2026-07-18
+
+- Raised minimum required Ruby version to 3.4.0 (dropping 3.0–3.3 support).
+- Set `.tool-versions` to Ruby 3.4.10.
+- Bumped dependencies: `rake` (~> 13.4), `rexml`, `concurrent-ruby`.
+- Updated CI workflow and Rubocop settings.
+
 ## Version 2
 
 ## 2.0.0 - 2021-03-28
