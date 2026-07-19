@@ -1,0 +1,102 @@
+-bel
+-ber
+-bos
+-che
+-da +c
+-du
+-fel
+-gut
+-im
+-ka
+-kep
+-ko
+-kop
+-kow
+-mal
+-mi +c
+-nak
+-oye
+-pash
+-pel
+-pom
+-sa +c
+-sab
+-sha
+-shu
+-ta
+-teng
+-tich
+-to
+-tu
+-wel
+-xa
+-xi
+-ya +c
+-ze
+al
+ang
+at
+be
+da
+deng
+do
+eng
+ere -c
+ga
+im -c
+ka
+ken
+la
+lom
+low
+lu
+ma
+mang
+mi
+na
+nga
+ok
+ol
+pa
+ra
+sa
+se
+sha
+shi
+ta
+teng
+ti
+to
+tu
+un
+wa
+we
+xa
+ya
++a -c
++ang
++atna
++da
++deng
++eng -c
++im -c
++ing
++kang
++lowda
++mang
++na
++nya
++owda -c
++pa
++ra
++sa
++shang
++ta
++teng
++tim
++to
++tu
++wa
++wala
++xa
++ya

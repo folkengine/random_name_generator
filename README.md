@@ -41,7 +41,7 @@ Or install it yourself as:
 generate a first and last name for you:
 
 ```shell
-$> exe/random_name_generator [-egrkfcxdß?]
+$> exe/random_name_generator [-egrkbfcxdß?]
 ```
 
 You can also install it so that it's instantly available to you:
@@ -60,8 +60,9 @@ RandomNameGenerator comes with several styles of syllable files:
 [Goblin](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/goblin.txt),
 [Roman](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/roman.txt),
 [Klingon](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/klingon.txt),
+[Welsh](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/welsh.txt),
 and
-[Welsh](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/welsh.txt).
+[Belter](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/belter.txt).
 By default it uses Fantasy. Instantiate RandomNameGenerator and then
 call compose on the object to generate a random name. If you don't pass
 in the number of syllables you want for your name to compose, it will

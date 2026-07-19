@@ -31,6 +31,7 @@ module RandomNameGenerator
   GOBLIN_RU = File.new("#{dirname}/languages/goblin-ru.txt")
   ROMAN_RU = File.new("#{dirname}/languages/roman-ru.txt")
 
+  BELTER = File.new("#{dirname}/languages/belter.txt")
   KLINGON = File.new("#{dirname}/languages/klingon.txt")
   WELSH = File.new("#{dirname}/languages/welsh.txt")
 
