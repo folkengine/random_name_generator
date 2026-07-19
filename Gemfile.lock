@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    random_name_generator (3.0.0)
+    random_name_generator (4.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -50,7 +50,7 @@ GEM
       method_source (~> 1.0)
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (13.1.0)
+    rake (13.4.2)
     reek (6.3.0)
       dry-schema (~> 1.13.0)
       parser (~> 3.3.0)
@@ -89,17 +89,19 @@ GEM
       rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     slop (4.10.1)
+    tsort (0.2.0)
     unicode-display_width (2.6.0)
     zeitwerk (2.6.18)
 
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-24
+  arm64-darwin-25
   x86_64-linux
 
 DEPENDENCIES
   pry
-  rake (~> 13.1.0)
+  rake (~> 13.4)
   random_name_generator!
   reek
   rspec (~> 3.12.0)
@@ -107,6 +109,7 @@ DEPENDENCIES
   rubocop-rake
   rubocop-rspec
   slop (~> 4.10.1)
+  tsort
 
 BUNDLED WITH
-   2.2.29
+  4.0.16

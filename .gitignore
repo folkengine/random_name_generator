@@ -35,6 +35,10 @@ build/
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
+# The Ruby version is a project requirement, not a personal preference, so it is
+# tracked here even when a global gitignore excludes it.
+!.tool-versions
+
 /.idea/
 
 .rspec_status

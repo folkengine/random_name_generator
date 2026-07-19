@@ -1,22 +1,47 @@
 name: Ruby
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
+    name: Ruby ${{ matrix.ruby-version }}
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.allow-failure || false }}
     strategy:
+      fail-fast: false
       matrix:
-        ruby-version: ['3.0', '3.2', '3.3.5']
+        ruby-version: ['3.4', '4.0']
+        include:
+          # Track the development build to catch 4.1 regressions early.
+          # Allowed to fail so a broken nightly never reds the whole run.
+          - ruby-version: head
+            allow-failure: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Ruby
-        # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-        # change this to (see https://github.com/ruby/setup-ruby#versioning):
         uses: ruby/setup-ruby@v1
-        # uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
         with:
           ruby-version: ${{ matrix.ruby-version }}
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Run tests
+          # head's bundled bundler is a moving target: honor the lockfile's
+          # BUNDLED WITH on release Rubies, but let head use a fresh latest
+          # bundler so a stale cache can't trigger CorruptBundlerInstallError.
+          bundler: ${{ matrix.ruby-version == 'head' && 'latest' || 'Gemfile.lock' }}
+          # Caching gems against "head" pairs a fixed cache with a changing
+          # interpreter; skip it there so each run installs cleanly.
+          bundler-cache: ${{ matrix.ruby-version != 'head' }}
+      - name: Install dependencies (head runs uncached)
+        if: matrix.ruby-version == 'head'
+        run: bundle install --jobs 4
+      - name: Run tests and lint
         run: bundle exec rake
