@@ -40,7 +40,7 @@ Or install it yourself as:
 generate a first and last name for you:
 
 ```shell
-$> exe/random_name_generator [-egrfcxß?]
+$> exe/random_name_generator [-egrkfcxß?]
 ```
 
 You can also install it so that it's instantly available to you:
@@ -57,8 +57,9 @@ RandomNameGenerator comes with several styles of syllable files:
 [Elven](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/elven.txt),
 [Fantasy](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/fantasy.txt),
 [Goblin](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/goblin.txt),
+[Roman](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/roman.txt),
 and
-[Roman](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/roman.txt).
+[Klingon](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/klingon.txt).
 By default it uses Fantasy. Instantiate RandomNameGenerator and then
 call compose on the object to generate a random name. If you don't pass
 in the number of syllables you want for your name to compose, it will
@@ -99,7 +100,9 @@ for the required specification.
 Edgier, less curated syllable sets live under `lib/languages/experimental/`
 and are opt-in via their own constants:
 [Curse](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/experimental/curse.txt)
-(`RandomNameGenerator::CURSE`) and
+(`RandomNameGenerator::CURSE`),
+[Demonic](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/experimental/demonic.txt)
+(`RandomNameGenerator::DEMONIC`), and
 [German Curse](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/experimental/german-curse.txt)
 (`RandomNameGenerator::GERMAN_CURSE`).
 

@@ -31,8 +31,11 @@ module RandomNameGenerator
   GOBLIN_RU = File.new("#{dirname}/languages/goblin-ru.txt")
   ROMAN_RU = File.new("#{dirname}/languages/roman-ru.txt")
 
+  KLINGON = File.new("#{dirname}/languages/klingon.txt")
+
   # Experimental
   CURSE = File.new("#{dirname}/languages/experimental/curse.txt")
+  DEMONIC = File.new("#{dirname}/languages/experimental/demonic.txt")
   GERMAN_CURSE = File.new("#{dirname}/languages/experimental/german-curse.txt")
 
   # Static factory method that instantiates a RandomNameGenerator in a random language.
