@@ -89,6 +89,7 @@ GEM
       rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     slop (4.10.1)
+    tsort (0.2.0)
     unicode-display_width (2.6.0)
     zeitwerk (2.6.18)
 
@@ -108,6 +109,7 @@ DEPENDENCIES
   rubocop-rake
   rubocop-rspec
   slop (~> 4.10.1)
+  tsort
 
 BUNDLED WITH
   4.0.16

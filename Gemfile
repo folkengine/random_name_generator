@@ -15,4 +15,6 @@ group :development do
   gem "rubocop"
   gem "rubocop-rake", require: false
   gem "rubocop-rspec", require: false
+  # tsort left the default gems in Ruby 4.1; RuboCop requires it implicitly.
+  gem "tsort"
 end
