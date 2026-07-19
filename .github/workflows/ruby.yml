@@ -33,6 +33,15 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          # head's bundled bundler is a moving target: honor the lockfile's
+          # BUNDLED WITH on release Rubies, but let head use a fresh latest
+          # bundler so a stale cache can't trigger CorruptBundlerInstallError.
+          bundler: ${{ matrix.ruby-version == 'head' && 'latest' || 'Gemfile.lock' }}
+          # Caching gems against "head" pairs a fixed cache with a changing
+          # interpreter; skip it there so each run installs cleanly.
+          bundler-cache: ${{ matrix.ruby-version != 'head' }}
+      - name: Install dependencies (head runs uncached)
+        if: matrix.ruby-version == 'head'
+        run: bundle install --jobs 4
       - name: Run tests and lint
         run: bundle exec rake
