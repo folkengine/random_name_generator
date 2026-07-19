@@ -33,6 +33,7 @@ module RandomNameGenerator
 
   # Experimental
   CURSE = File.new("#{dirname}/languages/experimental/curse.txt")
+  GERMAN_CURSE = File.new("#{dirname}/languages/experimental/german-curse.txt")
 
   # Static factory method that instantiates a RandomNameGenerator in a random language.
   def self.flip_mode
