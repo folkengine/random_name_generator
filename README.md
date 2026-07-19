@@ -40,7 +40,7 @@ Or install it yourself as:
 generate a first and last name for you:
 
 ```shell
-$> exe/random_name_generator [-egrkfcxß?]
+$> exe/random_name_generator [-egrkfcxdß?]
 ```
 
 You can also install it so that it's instantly available to you:

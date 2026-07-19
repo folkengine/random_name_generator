@@ -11,9 +11,11 @@ opts = Slop.parse do |o|
   o.bool "-e", "--elven", "Use Elven eyllable file"
   o.bool "-g", "--goblin", "Use Goblin eyllable file"
   o.bool "-r", "--roman", "Use Roman eyllable file"
+  o.bool "-k", "--klingon", "Use Klingon eyllable file"
   o.bool "-f", "--flipmode", "Flip mode in effect"
   o.bool "-c", "--cyrillic", "Use Cyrillic mode"
   o.bool "-x", "--xrated", "Generate Curse words [NEEDS WORK]"
+  o.bool "-d", "--demonic", "Generate Demonic names"
   o.bool "-ß", "--german-curse", "Generate German Curse words [NEEDS WORK]"
   o.bool "-?", "--help", "How to"
 end
@@ -27,7 +29,9 @@ else
   lang = RandomNameGenerator::ELVEN if opts.elven?
   lang = RandomNameGenerator::GOBLIN if opts.goblin?
   lang = RandomNameGenerator::ROMAN if opts.roman?
+  lang = RandomNameGenerator::KLINGON if opts.klingon?
   lang = RandomNameGenerator::CURSE if opts.xrated?
+  lang = RandomNameGenerator::DEMONIC if opts.demonic?
   lang = RandomNameGenerator::GERMAN_CURSE if opts.german_curse?
 end
 
