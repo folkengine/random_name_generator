@@ -64,7 +64,7 @@ and
 By default it uses Fantasy. Instantiate RandomNameGenerator and then
 call compose on the object to generate a random name. If you don't pass
 in the number of syllables you want for your name to compose, it will
-randomly pick between 3 and 6.
+randomly pick between 2 and 5.
 
 ```ruby
 require 'random_name_generator'

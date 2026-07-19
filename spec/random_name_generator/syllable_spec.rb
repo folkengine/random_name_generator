@@ -164,6 +164,38 @@ RSpec.describe RandomNameGenerator::Syllable do
       end
     end
 
+    context "when cloning" do
+      it "creates a copy when passed another Syllable" do
+        original = described_class.new("-foo +c")
+        clone = described_class.new(original)
+        expect(clone.raw).to eq(original.raw)
+        expect(clone.prefix?).to be true
+        expect(clone.next_syllable_must_start_with_consonant?).to be true
+      end
+    end
+
+    context "when empty" do
+      ["", "   ", "\n"].each do |s|
+        it "raises ArgumentError for #{s.inspect}" do
+          expect { described_class.new(s) }.to raise_error(ArgumentError, /Empty/)
+        end
+      end
+    end
+
+    context "with Cyrillic letters" do
+      it "classifies Cyrillic vowels and consonants" do
+        expect(described_class.new("-анг +v").consonant_last?).to be true
+        expect(described_class.new("тюр").vowel_first?).to be false
+        expect(described_class.new("атюр").vowel_first?).to be true
+      end
+
+      it "honors adjacency flags between Cyrillic syllables" do
+        needs_vowel = described_class.new("-анг +v")
+        expect(needs_vowel.incompatible?(described_class.new("дра"))).to be true
+        expect(needs_vowel.incompatible?(described_class.new("ат"))).to be false
+      end
+    end
+
     context "when compatible" do
       [%w[yada ria], ["ae +c -c", "lean"], ["lean -c", "ae +c -c"]].each do |a_b|
         it "incompatible? must return false between #{a_b[0]} and #{a_b[1]}" do

@@ -5,6 +5,10 @@ _Repo:_ `random_name_generator` v4.0.2 (working tree, including the in-flight De
 _Model:_ Claude Fable 5 (`claude-fable-5`)
 _Audit basis:_ Full codebase read + empirical verification — every defect below was reproduced with a live repro before being reported.
 
+> **Remediation:** all nine findings were fixed on 2026-07-19, immediately following
+> this audit, with regression specs added for each (suite grew from 61 to 168
+> examples). The findings below describe the codebase as audited.
+
 ---
 
 ## Executive Summary

@@ -95,8 +95,8 @@ RSpec.describe RandomNameGenerator do
 
   context "with pick_number_of_syllables" do
     10.times do
-      it "returns an integer between 1 and 6" do
-        expect(described_class.pick_number_of_syllables).to be_between(1, 5)
+      it "returns an integer between 2 and 5" do
+        expect(described_class.pick_number_of_syllables).to be_between(2, 5)
       end
     end
   end
@@ -172,10 +172,47 @@ RSpec.describe RandomNameGenerator do
     context "with compose_array" do
       sut = RandomNameGenerator.flip_mode
       it "returns the connect number of syllables when specified" do
+        expect(sut.compose_array(1).length).to be(1)
         expect(sut.compose_array(2).length).to be(2)
         expect(sut.compose_array(3).length).to be(3)
         expect(sut.compose_array(4).length).to be(4)
         expect(sut.compose_array(5).length).to be(5)
+      end
+    end
+
+    context "with a single syllable" do
+      it "composes a name from the prefixes alone" do
+        name = @elven.compose(1)
+        expect(name).to be_a(String)
+        expect(name).not_to be_empty
+      end
+    end
+
+    context "with a language file containing blank lines" do
+      it "skips them instead of crashing" do
+        dirname = File.dirname(__FILE__)
+        generator = described_class.new(File.new("#{dirname}/languages/test-blank.txt"))
+        expect(generator.pre_syllables.length).to be(1)
+        expect(generator.mid_syllables.length).to be(1)
+        expect(generator.sur_syllables.length).to be(1)
+      end
+    end
+
+    context "with a language whose flags cannot be satisfied" do
+      it "raises a descriptive error instead of looping forever" do
+        dirname = File.dirname(__FILE__)
+        generator = described_class.new(File.new("#{dirname}/languages/test-incompatible.txt"))
+        expect { generator.compose(2) }.to raise_error(ArgumentError, /compatible/)
+      end
+    end
+
+    context "with adjacency flags" do
+      it "never places incompatible syllables next to each other" do
+        20.times do
+          @tiny.compose_array(5).each_cons(2) do |left, right|
+            expect(left.compatible?(right)).to be(true), "#{left.raw} followed by #{right.raw}"
+          end
+        end
       end
     end
 

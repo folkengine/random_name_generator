@@ -42,10 +42,15 @@ module RandomNameGenerator
   class Syllable
     attr_reader :raw, :syllable, :next_syllable_requirement, :previous_syllable_requirement
 
-    VOWELS = %w[i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ].freeze
-    CONSONANTS = %w[b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z].freeze
+    # "y" appears in both sets deliberately: as a semivowel it satisfies
+    # either a +v or a +c adjacency requirement.
+    VOWELS = %w[i y ɨ ʉ ɯ u ɪ ʏ ʊ ɯ ʊ e ø ɘ ɵ ɤ o ø ə ɵ ɤ o ɛ œ ɜ ɞ ʌ ɔ æ ɐ ɞ a ɶ ä ɒ ɑ ö ü
+                а е ё и о у ы э ю я].freeze
+    CONSONANTS = %w[b ɓ ʙ β c d ɗ ɖ ð f g h j k l ł m ɱ n ɳ p q r s t v w x y z ß
+                    б в г д ж з й к л м н п р с т ф х ц ч ш щ ь].freeze
 
     def initialize(args)
+      args = args.raw if args.is_a?(Syllable)
       @raw = args.strip
       @syllable = ""
       @is_prefix = false
@@ -53,11 +58,7 @@ module RandomNameGenerator
       @next_syllable_requirement = :letter
       @previous_syllable_requirement = :letter
 
-      if args.is_a?(Syllable)
-        parse_args(args.raw)
-      else
-        parse_args(args)
-      end
+      parse_args(args)
     end
 
     def incompatible?(next_syllable)
@@ -134,7 +135,7 @@ module RandomNameGenerator
     end
 
     def parse_syllable(syll)
-      raise ArgumentError "Empty String is not allowed." if syll.empty?
+      raise ArgumentError, "Empty String is not allowed." if syll.to_s.empty?
 
       captures = /([+-]?)(.+)/.match(syll).captures
       parse_prefix(captures[0])
