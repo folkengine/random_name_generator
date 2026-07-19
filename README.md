@@ -4,6 +4,7 @@
 [![Build and Test](https://github.com/folkengine/random_name_generator/actions/workflows/ruby.yml/badge.svg)](https://github.com/folkengine/random_name_generator/actions/workflows/ruby.yml)
 [![Code Climate](https://codeclimate.com/github/folkengine/random_name_generator/badges/gpa.svg)](https://codeclimate.com/github/folkengine/random_name_generator)
 [![Inline docs](http://inch-ci.org/github/folkengine/random_name_generator.svg?branch=master)](http://inch-ci.org/github/folkengine/random_name_generator)
+[![AI BOM](https://img.shields.io/badge/AI--BOM-tracked-blueviolet)](./AI-BOM.md)
 
 Ruby port of
 [java-random-name-generator](https://github.com/folkengine/java-random-name-generator),
@@ -63,7 +64,7 @@ and
 By default it uses Fantasy. Instantiate RandomNameGenerator and then
 call compose on the object to generate a random name. If you don't pass
 in the number of syllables you want for your name to compose, it will
-randomly pick between 3 and 6.
+randomly pick between 2 and 5.
 
 ```ruby
 require 'random_name_generator'
@@ -152,9 +153,9 @@ https://github.com/folkengine/random_name_generator.
 This ships with a skill designed to work with [Claude Code](https://claude.com/claude-code) 
 and other LLMs under `.claude/skills/`.
 
-- [lang-gen](.claude/skills/lang-gen/SKILL.md) — Generate a new random_name_generator language from a free-text theme (e.g. "german curse words") — assembles flagged pre/mid/sur syllable collections, registers the File constant, adds a smoke spec and README entry, and samples names to verify.
+- [lang-gen](.claude/skills/lang-gen/SKILL.md): Generate a new random_name_generator language from a free-text theme (e.g. "german curse words"), assembles flagged pre/mid/sur syllable collections, registers the File constant, adds a smoke spec and README entry, and samples names to verify.
 
-There is also [a text version](docs/superpowers/specs/2026-07-19-lang-gen-portable-prompt.md) of the prompt that can be pasted into an LLM. 
+There is also [a text version](docs/superpowers/specs/2026-07-19-lang-gen-portable-prompt.md) of the prompt that can be pasted into an LLM.
 
 ### lang-gen
 

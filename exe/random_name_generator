@@ -8,10 +8,10 @@ require "slop"
 lang = RandomNameGenerator::FANTASY
 
 opts = Slop.parse do |o|
-  o.bool "-e", "--elven", "Use Elven eyllable file"
-  o.bool "-g", "--goblin", "Use Goblin eyllable file"
-  o.bool "-r", "--roman", "Use Roman eyllable file"
-  o.bool "-k", "--klingon", "Use Klingon eyllable file"
+  o.bool "-e", "--elven", "Use Elven syllable file"
+  o.bool "-g", "--goblin", "Use Goblin syllable file"
+  o.bool "-r", "--roman", "Use Roman syllable file"
+  o.bool "-k", "--klingon", "Use Klingon syllable file"
   o.bool "-f", "--flipmode", "Flip mode in effect"
   o.bool "-c", "--cyrillic", "Use Cyrillic mode"
   o.bool "-x", "--xrated", "Generate Curse words [NEEDS WORK]"

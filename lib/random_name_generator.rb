@@ -87,7 +87,7 @@ module RandomNameGenerator
     # Returns the composed name as an array of Syllables.
     def compose_array(count = RandomNameGenerator.pick_number_of_syllables)
       @pre = pre_syllables.sample(random: @rnd)
-      return @pre.to_s.capitalize if count < 2
+      return [@pre] if count < 2
 
       name = determine_middle_syllables(count - 2, @pre)
       name << determine_last_syllable(name.last)
@@ -125,18 +125,18 @@ module RandomNameGenerator
     end
 
     def determine_next_syllable(this_syllable, sampler)
-      next_syllable = ""
-      loop do
-        next_syllable = sampler.sample(random: @rnd)
-        break unless this_syllable.incompatible?(next_syllable)
+      candidates = sampler.select { |syllable| this_syllable.compatible?(syllable) }
+      if candidates.empty?
+        raise ArgumentError,
+              "No syllable in #{@language.path} is compatible with \"#{this_syllable}\" — check its +v/+c/-v/-c flags"
       end
-      next_syllable
+      candidates.sample(random: @rnd)
     end
 
     # Loops through the language file, and pushes each syllable into the correct array.
     def refresh
       @language.readlines.each do |line|
-        push(RandomNameGenerator::Syllable.new(line)) unless line.empty?
+        push(RandomNameGenerator::Syllable.new(line)) unless line.strip.empty?
       end
       @language.rewind
     end

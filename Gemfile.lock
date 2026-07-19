@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    random_name_generator (4.0.2)
+    random_name_generator (4.0.3)
+      slop (~> 4.10)
 
 GEM
   remote: https://rubygems.org/
@@ -40,6 +41,7 @@ GEM
       zeitwerk (~> 2.6)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
+    logger (1.7.0)
     method_source (1.1.0)
     parallel (1.26.3)
     parser (3.3.5.0)
@@ -100,6 +102,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  logger
   pry
   rake (~> 13.4)
   random_name_generator!
@@ -108,7 +111,6 @@ DEPENDENCIES
   rubocop
   rubocop-rake
   rubocop-rspec
-  slop (~> 4.10.1)
   tsort
 
 BUNDLED WITH
