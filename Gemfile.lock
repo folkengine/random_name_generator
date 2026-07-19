@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    random_name_generator (4.0.2)
+    random_name_generator (4.0.3)
       slop (~> 4.10)
 
 GEM
