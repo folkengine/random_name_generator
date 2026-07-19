@@ -72,10 +72,26 @@ RSpec.describe RandomNameGenerator do
       expect(name).not_to be_empty
     end
 
+    it "when it has a Belter language" do
+      expect(RandomNameGenerator::BELTER).to be_a(File)
+      expect(RandomNameGenerator::BELTER.path).to include("languages/belter.txt")
+      name = RandomNameGenerator::Generator.new(RandomNameGenerator::BELTER).compose
+      expect(name).to be_a(String)
+      expect(name).not_to be_empty
+    end
+
     it "when it has a Klingon language" do
       expect(RandomNameGenerator::KLINGON).to be_a(File)
       expect(RandomNameGenerator::KLINGON.path).to include("languages/klingon.txt")
       name = RandomNameGenerator::Generator.new(RandomNameGenerator::KLINGON).compose
+      expect(name).to be_a(String)
+      expect(name).not_to be_empty
+    end
+
+    it "when it has a Welsh language" do
+      expect(RandomNameGenerator::WELSH).to be_a(File)
+      expect(RandomNameGenerator::WELSH.path).to include("languages/welsh.txt")
+      name = RandomNameGenerator::Generator.new(RandomNameGenerator::WELSH).compose
       expect(name).to be_a(String)
       expect(name).not_to be_empty
     end
