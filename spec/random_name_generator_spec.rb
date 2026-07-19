@@ -55,6 +55,14 @@ RSpec.describe RandomNameGenerator do
       expect(RandomNameGenerator::ROMAN_RU).to be_a(File)
       expect(RandomNameGenerator::ROMAN_RU.path).to include("languages/roman-ru.txt")
     end
+
+    it "when it has a German-Curse language" do
+      expect(RandomNameGenerator::GERMAN_CURSE).to be_a(File)
+      expect(RandomNameGenerator::GERMAN_CURSE.path).to include("languages/experimental/german-curse.txt")
+      name = RandomNameGenerator::Generator.new(RandomNameGenerator::GERMAN_CURSE).compose
+      expect(name).to be_a(String)
+      expect(name).not_to be_empty
+    end
   end
 
   context "with flip_mode" do

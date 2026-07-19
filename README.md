@@ -30,11 +30,26 @@ gem 'random_name_generator'
 
 And then execute:
 
-    $❯ bundle install
+    `$❯ bundle install`
 
 Or install it yourself as:
 
-    $❯ gem install random_name_generator
+    `$❯ gem install random_name_generator`
+
+`RandomNameGenerator` also comes with a command line interface which will
+generate a first and last name for you:
+
+```shell
+$> exe/random_name_generator [-egrfcxß?]
+```
+
+You can also install it so that it's instantly available to you:
+
+```shell
+$> bundle exec rake install
+$> random_name_generator --german-curse
+Dummkopfischpopelsepp Schnoddmistmann
+```
 
 ## Usage
 
@@ -79,15 +94,14 @@ You can also pass in your own syllable files. See
 [Syllable.rb](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/syllable.rb)
 for the required specification.
 
-RandomNameGenerator also comes with a command line interface which will
-generate a first and last name for you:
+### Experimental languages
 
-```
-bin/random_name_generator [-efgr?]
-```
-
-Add the gem's bin directory to you path in order to have instant access
-to RandomNameGenerator.
+Edgier, less curated syllable sets live under `lib/languages/experimental/`
+and are opt-in via their own constants:
+[Curse](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/experimental/curse.txt)
+(`RandomNameGenerator::CURSE`) and
+[German Curse](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/experimental/german-curse.txt)
+(`RandomNameGenerator::GERMAN_CURSE`).
 
 ## Porting and Refactoring Notes
 
@@ -98,7 +112,7 @@ syllable, greatly simplifying the Random Name Generator code.
 Part of the reason for working on this gem was to work on the following
 goals to improve my Ruby craft:
 
-* Code confidently in the spirit of Advi Grimm's
+* Code confidently in the spirit of Avdi Grimm's
   [Confident Ruby](http://www.confidentruby.com/).
 * ~~Use
   [Travis-CI](https://travis-ci.org/folkengine/random_name_generator)
@@ -129,6 +143,44 @@ call `$❯ rake reek`
 
 Bug reports and pull requests are welcome on GitHub at
 https://github.com/folkengine/random_name_generator.
+
+## Skills
+
+This ships with a skill designed to work with [Claude Code](https://claude.com/claude-code) 
+and other LLMs under `.claude/skills/`.
+
+- [lang-gen](.claude/skills/lang-gen/SKILL.md) — Generate a new random_name_generator language from a free-text theme (e.g. "german curse words") — assembles flagged pre/mid/sur syllable collections, registers the File constant, adds a smoke spec and README entry, and samples names to verify.
+
+There is also [a text version](docs/superpowers/specs/2026-07-19-lang-gen-portable-prompt.md) of the prompt that can be pasted into an LLM. 
+
+### lang-gen
+
+Adding a language by hand means writing a `.txt` of prefix/middle/suffix
+syllables, wiring up a `File` constant, adding a spec, and documenting it.
+`lang-gen` does the whole flow from a plain-English theme.
+
+Invoke it from Claude Code with the theme as the argument:
+
+```
+/lang-gen Klingon words of joy
+```
+
+This will:
+
+1. Derive a **slug** (`klingon-joy`), **constant** (`KLINGON_JOY`), and
+   destination; edgy themes land in `lib/languages/experimental/`, tame
+   ones in `lib/languages/`; and confirm before writing.
+2. Author the syllable file, seeding real roots for the theme and extending
+   each of the three buckets (prefix `-`, middle, suffix `+`) with same-flavor
+   syllables, adding `+v`/`+c`/`-v`/`-c` adjacency flags only where needed.
+3. Register the `File` constant in `lib/random_name_generator.rb`.
+4. Add a smoke spec to `spec/random_name_generator_spec.rb`.
+5. Add a README entry linking the new language.
+6. Verify that all three buckets are non-empty, then sample
+   composed names so you can eyeball the result.
+
+The experimental [German Curse](lib/languages/experimental/german-curse.txt)
+language was generated this way.
 
 ## License
 
