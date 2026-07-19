@@ -79,6 +79,15 @@ You can also pass in your own syllable files. See
 [Syllable.rb](https://github.com/folkengine/random_name_generator/blob/master/lib/random_name_generator/syllable.rb)
 for the required specification.
 
+### Experimental languages
+
+Edgier, less curated syllable sets live under `lib/languages/experimental/`
+and are opt-in via their own constants:
+[Curse](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/experimental/curse.txt)
+(`RandomNameGenerator::CURSE`) and
+[German Curse](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/experimental/german-curse.txt)
+(`RandomNameGenerator::GERMAN_CURSE`).
+
 RandomNameGenerator also comes with a command line interface which will
 generate a first and last name for you:
 
@@ -129,6 +138,10 @@ call `$❯ rake reek`
 
 Bug reports and pull requests are welcome on GitHub at
 https://github.com/folkengine/random_name_generator.
+
+## Skills
+
+- [lang-gen](.claude/skills/lang-gen/SKILL.md) — Generate a new random_name_generator language from a free-text theme (e.g. "german curse words") — assembles flagged pre/mid/sur syllable collections, registers the File constant, adds a smoke spec and README entry, and samples names to verify.
 
 ## License
 
