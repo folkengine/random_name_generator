@@ -32,6 +32,7 @@ module RandomNameGenerator
   ROMAN_RU = File.new("#{dirname}/languages/roman-ru.txt")
 
   KLINGON = File.new("#{dirname}/languages/klingon.txt")
+  WELSH = File.new("#{dirname}/languages/welsh.txt")
 
   # Experimental
   CURSE = File.new("#{dirname}/languages/experimental/curse.txt")

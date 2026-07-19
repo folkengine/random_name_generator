@@ -1,0 +1,91 @@
+-ang +c
+-bled
+-bran
+-bryn
+-cad
+-caer
+-car
+-cyn
+-del
+-dyf
+-dyl
+-eir
+-em +c
+-ffion
+-gar
+-ger
+-gla +c
+-glyn
+-gru +c
+-gwen
+-gwyn
+-hedd
+-idr +v
+-llan
+-llew
+-mab
+-mor
+-myr +c
+-ol +c
+-ow +v
+-rhi +c
+-rhos
+-rhys
+-tal
+-tre +c
+a -c
+ad
+ael
+af
+an
+ar
+aw
+del
+dwr
+ed
+el
+ell
+en
+er
+es
+gar
+goll
+gwa
+ha
+i -c
+ian
+lan
+lod
+lyn
+mai
+o -c
+on
+rhy
+ron
+si
+wal
+wy
++ain -c
++aint -c
++an
++ddyn -v
++dwr
++dydd
++dys
++ed -c
++ell -c
++eth
++in
++ion
++lys
++og -c
++on
++rad
++ri
++rys
++ur -c
++wen
++wyn
++wyr
++ydd -c
++ys

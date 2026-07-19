@@ -59,8 +59,9 @@ RandomNameGenerator comes with several styles of syllable files:
 [Fantasy](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/fantasy.txt),
 [Goblin](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/goblin.txt),
 [Roman](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/roman.txt),
+[Klingon](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/klingon.txt),
 and
-[Klingon](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/klingon.txt).
+[Welsh](https://github.com/folkengine/random_name_generator/blob/master/lib/languages/welsh.txt).
 By default it uses Fantasy. Instantiate RandomNameGenerator and then
 call compose on the object to generate a random name. If you don't pass
 in the number of syllables you want for your name to compose, it will

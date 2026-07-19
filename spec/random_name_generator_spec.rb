@@ -79,6 +79,14 @@ RSpec.describe RandomNameGenerator do
       expect(name).to be_a(String)
       expect(name).not_to be_empty
     end
+
+    it "when it has a Welsh language" do
+      expect(RandomNameGenerator::WELSH).to be_a(File)
+      expect(RandomNameGenerator::WELSH.path).to include("languages/welsh.txt")
+      name = RandomNameGenerator::Generator.new(RandomNameGenerator::WELSH).compose
+      expect(name).to be_a(String)
+      expect(name).not_to be_empty
+    end
   end
 
   context "with flip_mode" do
