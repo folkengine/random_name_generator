@@ -152,7 +152,7 @@ https://github.com/folkengine/random_name_generator.
 
 ## Skills
 
-This ships with a skill designed to work with [Claude Code](https://claude.com/claude-code) 
+Version 4.x of this library ships with a skill designed to work with [Claude Code](https://claude.com/claude-code) 
 and other LLMs under `.claude/skills/`.
 
 - [lang-gen](.claude/skills/lang-gen/SKILL.md): Generate a new random_name_generator language from a free-text theme (e.g. "german curse words"), assembles flagged pre/mid/sur syllable collections, registers the File constant, adds a smoke spec and README entry, and samples names to verify.
