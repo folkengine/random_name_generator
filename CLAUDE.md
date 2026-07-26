@@ -36,3 +36,14 @@ syllables from per-language `.txt` files. Ships a library API and a `slop`-based
 
 `.txt` file → `File` constant → CLI flag (if user-facing) → spec → README + CHANGELOG.
 The `lang-gen` skill automates this.
+
+## Knowledge bundle
+
+`.okf/` is an [OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
+bundle (markdown + YAML frontmatter) carrying the detail this file compresses: the
+syllable-file grammar, per-language bucket counts, CLI selection quirks, and the
+reasoning behind the conventions above. Start at `.okf/index.md`.
+
+- **Consult it** before changing the composition algorithm, the syllable format, or the CLI.
+- **Maintain it:** when a change invalidates a concept, update that file's body and
+  `timestamp`, then append a dated entry to `.okf/log.md`. The `okf` skill covers the flow.

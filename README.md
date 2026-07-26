@@ -150,6 +150,15 @@ call `$❯ rake reek`
 Bug reports and pull requests are welcome on GitHub at
 https://github.com/folkengine/random_name_generator.
 
+### Knowledge bundle
+
+This project uses the [`.okf/`](.okf/index.md) as an
+[Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
+reference to how the code is structured. It documents the syllable file
+grammar, a catalog of every bundled language with its constant and flag,
+how composition and its failure modes work, and the reasoning behind
+conventions such as injected randomness.
+
 ## Skills
 
 Version 4.x of this library ships with a skill designed to work with [Claude Code](https://claude.com/claude-code) 
