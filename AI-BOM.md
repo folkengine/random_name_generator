@@ -1,6 +1,6 @@
 # AI Bill of Materials — random_name_generator
 
-_Last updated: 2026-07-19 · random_name_generator v4.0.2_
+_Last updated: 2026-07-26 · random_name_generator v4.0.5_
 
 An inventory of every AI component associated with this repository — development
 tools used to build it, AI-generated content shipped within it, and external AI
@@ -20,6 +20,7 @@ to provenance.
 | Tool | Vendor | Role | Notes |
 |------|--------|------|-------|
 | Claude Code | Anthropic | AI coding assistant | Introduced in 4.0.0; drives the [`lang-gen`](./.claude/skills/lang-gen/SKILL.md) skill and general maintenance |
+| `okf` skill | — | Knowledge-bundle authoring | External Claude Code skill; authored and maintains the [`.okf/`](./.okf/index.md) bundle. Not vendored in this repo |
 
 ---
 
@@ -43,6 +44,9 @@ All output was human-reviewed before commit.
 | [`lang-gen`](./.claude/skills/lang-gen/SKILL.md) | Claude Code skill | — | Generates a fully integrated language from a plain-English theme |
 | [German Curse](./lib/languages/experimental/german-curse.txt) (`GERMAN_CURSE`) | Language syllable file | `lang-gen` | Experimental; seeded from real roots, extended with invented syllables |
 | [Demonic](./lib/languages/experimental/demonic.txt) (`DEMONIC`) | Language syllable file | `lang-gen` | Experimental; completed from infernal-name source lists |
+| [Welsh](./lib/languages/welsh.txt) (`WELSH`) | Language syllable file | `lang-gen` | Added in 4.0.4; seeded from real Welsh name roots |
+| [Belter](./lib/languages/belter.txt) (`BELTER`) | Language syllable file | `lang-gen` | Added in 4.0.4; Belter creole (The Expanse), an invented language |
+| [`.okf/`](./.okf/index.md) | Knowledge bundle | `okf` skill | Added in 4.0.5; 14 OKF concept files across 6 areas — the API, syllable format, CLI, and decisions |
 | [Portable lang-gen prompt](./docs/superpowers/specs/2026-07-19-lang-gen-portable-prompt.md) | Text prompt | — | LLM-agnostic version of the skill |
 
 ---
@@ -81,5 +85,6 @@ no network calls and requires no API keys. None are planned.
 |----------|---------|
 | [`docs/AUDIT_Fable_5.md`](./docs/AUDIT_Fable_5.md) | Full-codebase audit with empirically verified findings |
 | [`.claude/skills/lang-gen/SKILL.md`](./.claude/skills/lang-gen/SKILL.md) | The lang-gen language-generation skill |
+| [`.okf/index.md`](./.okf/index.md) | AI-authored knowledge bundle; [`.okf/log.md`](./.okf/log.md) is its change log |
 | [`README.md`](./README.md) | Project overview, including the lang-gen workflow |
 | [`docs/superpowers/specs/2026-07-19-lang-gen-portable-prompt.md`](./docs/superpowers/specs/2026-07-19-lang-gen-portable-prompt.md) | Paste-into-any-LLM version of the prompt |
