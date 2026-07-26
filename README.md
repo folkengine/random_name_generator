@@ -194,6 +194,14 @@ This will:
 6. Verify that all three buckets are non-empty, then sample
    composed names so you can eyeball the result.
 
+Here's a sample:
+
+```txt
+Parmaqo'ochu'
+Hiqejajvam
+Tiq'emey
+```
+
 The experimental [German Curse](lib/languages/experimental/german-curse.txt)
 language was generated this way.
 
