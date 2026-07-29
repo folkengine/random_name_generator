@@ -1,6 +1,16 @@
 ## Version 4
 
-## 4.0.5 - unreleased
+## 4.0.6 - unreleased
+
+- Added a dependency audit at [`docs/DEPENDENCY_AUDIT.md`](./docs/DEPENDENCY_AUDIT.md):
+  the shipping graph is a single gem (`slop`), the library core requires nothing
+  third-party, and `slop`'s used surface is covered entirely by the stdlib
+  `optparse` default gem.
+- **Wired up security advisory scanning.** Added `bundler-audit` to the
+  development group and a separate `audit` job to CI that checks the gem graph
+  against `ruby-advisory-db` on every push and pull request.
+
+## 4.0.5 - 2026-07-26
 
 - Added an [OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
   knowledge bundle in `.okf/` — 14 concept files across 6 areas covering the

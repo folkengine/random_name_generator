@@ -9,6 +9,7 @@ gem "pry"
 gem "rake", "~> 13.4"
 
 group :development do
+  gem "bundler-audit", require: false # CLI only; checks the gem graph against ruby-advisory-db.
   gem "logger" # logger leaves the default gems in Ruby 4.0; Reek (via dry-core) requires it implicitly.
   gem "reek"
   gem "rspec", "~> 3.12.0"

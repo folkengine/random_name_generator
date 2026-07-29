@@ -45,3 +45,24 @@ jobs:
         run: bundle install --jobs 4
       - name: Run tests and lint
         run: bundle exec rake
+
+  # Advisory results depend on the gem graph, not the interpreter, so this runs
+  # once rather than on every matrix leg. Keeping it out of `test` also matters
+  # because that job's "head" leg sets continue-on-error, which would silently
+  # swallow a vulnerability report.
+  audit:
+    name: Security advisories
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler: Gemfile.lock
+          bundler-cache: true
+      # --update pulls the latest ruby-advisory-db instead of trusting the copy
+      # bundled with the gem. This means a newly published advisory can red the
+      # build with no code change on our side — that is the intent of the gate.
+      - name: Check dependencies against ruby-advisory-db
+        run: bundle exec bundler-audit check --update

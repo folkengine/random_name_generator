@@ -1,6 +1,6 @@
 # AI Bill of Materials — random_name_generator
 
-_Last updated: 2026-07-26 · random_name_generator v4.0.5_
+_Last updated: 2026-07-29 · random_name_generator v4.0.6_
 
 An inventory of every AI component associated with this repository — development
 tools used to build it, AI-generated content shipped within it, and external AI
@@ -21,16 +21,18 @@ to provenance.
 |------|--------|------|-------|
 | Claude Code | Anthropic | AI coding assistant | Introduced in 4.0.0; drives the [`lang-gen`](./.claude/skills/lang-gen/SKILL.md) skill and general maintenance |
 | `okf` skill | — | Knowledge-bundle authoring | External Claude Code skill; authored and maintains the [`.okf/`](./.okf/index.md) bundle. Not vendored in this repo |
+| `untangle` skill | — | Dependency auditing | External Claude Code skill; authored [`docs/DEPENDENCY_AUDIT.md`](./docs/DEPENDENCY_AUDIT.md) in 4.0.6. Not vendored in this repo |
 
 ---
 
 ## 2. AI Audits
 
-Formal code reviews performed by AI models. Full reports in `docs/`.
+Formal reviews and audits performed by AI models. Full reports in `docs/`.
 
-| Date | Model | Report | Version |
-|------|-------|--------|---------|
-| 2026-07-19 | Claude Fable 5 | [`docs/AUDIT_Fable_5.md`](./docs/AUDIT_Fable_5.md) | v4.0.2 |
+| Date | Model | Report | Scope | Version |
+|------|-------|--------|-------|---------|
+| 2026-07-19 | Claude Fable 5 | [`docs/AUDIT_Fable_5.md`](./docs/AUDIT_Fable_5.md) | Full-codebase code review | v4.0.2 |
+| 2026-07-29 | Claude Opus 5 | [`docs/DEPENDENCY_AUDIT.md`](./docs/DEPENDENCY_AUDIT.md) | Dependency / supply-chain audit; entanglement scoring and removal cost per dependency | v4.0.6 |
 
 ---
 
@@ -84,6 +86,7 @@ no network calls and requires no API keys. None are planned.
 | Document | Purpose |
 |----------|---------|
 | [`docs/AUDIT_Fable_5.md`](./docs/AUDIT_Fable_5.md) | Full-codebase audit with empirically verified findings |
+| [`docs/DEPENDENCY_AUDIT.md`](./docs/DEPENDENCY_AUDIT.md) | Dependency audit: shipping vs dev graph, per-dependency entanglement score and removal cost |
 | [`.claude/skills/lang-gen/SKILL.md`](./.claude/skills/lang-gen/SKILL.md) | The lang-gen language-generation skill |
 | [`.okf/index.md`](./.okf/index.md) | AI-authored knowledge bundle; [`.okf/log.md`](./.okf/log.md) is its change log |
 | [`README.md`](./README.md) | Project overview, including the lang-gen workflow |
